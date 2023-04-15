@@ -1,0 +1,9 @@
+numpy
+pandas
+matplotlib
+streamlit
+pandas-profiling
+streamlit-pandas-profiling
+seaborn
+sklearn
+time
