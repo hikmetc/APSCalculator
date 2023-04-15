@@ -1,3 +1,5 @@
+# Developed by Hikmet Can Çubukçu
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -445,8 +447,6 @@ if analyze_button:
        
     except NameError:
         st.error('Please upload your file')
-
-
-
-
+    except ValueError: 
+        st.error('Inappropriate clinical decision limit was entered.', icon="❗")
         
