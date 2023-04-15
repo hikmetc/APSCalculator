@@ -24,8 +24,8 @@ with st.sidebar:
         uploaded_file = pd.read_excel(file)
         analyte_name_box = st.selectbox("**Select Analyte Name**", tuple(uploaded_file.columns))
         analyte_data = uploaded_file[analyte_name_box]
-        analyte_data = analyte_data.dropna(axis=0)
-        analyte_data = analyte_data
+        analyte_data = analyte_data.dropna(axis=0).reset_index()
+        analyte_data = analyte_data[analyte_name_box]
 
         return analyte_data, analyte_name_box
 
