@@ -3,5 +3,5 @@ numpy
 pandas
 matplotlib
 seaborn
-sklearn.metrics==1.0.2
+scikit-learn==1.0.2
 time
