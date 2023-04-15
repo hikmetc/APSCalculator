@@ -25,6 +25,7 @@ with st.sidebar:
         analyte_name_box = st.selectbox("**Select Analyte Name**", tuple(uploaded_file.columns))
         analyte_data = uploaded_file[analyte_name_box]
         analyte_data = analyte_data.dropna(axis=0)
+        analyte_data = analyte_data.reset_index()
 
         return analyte_data, analyte_name_box
 
