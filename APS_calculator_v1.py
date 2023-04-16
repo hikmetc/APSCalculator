@@ -169,7 +169,6 @@ with tab1:
                 
                 """)
                 st.markdown('---')
-                st.info('*Developed by Hikmet Can Çubukçu, MD, EuSpLM* <hikmetcancubukcu@gmail.com>')
                      
 # action after clicking the button "simulate & analyze" 
 if analyze_button:
@@ -452,5 +451,5 @@ if analyze_button:
     except ValueError: 
         st.error('Inappropriate clinical decision limit was entered.', icon="❗")
 else:
-    st.warning('Please upload your file', icon = "📁")
+    st.info('Please upload your file', icon = "📁")
         
