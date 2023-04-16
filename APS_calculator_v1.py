@@ -168,6 +168,8 @@ with tab1:
                 Minimum, desirable, and optimal analytical performance specifications were determined according to the aggreement thresholds that entered previously.
                 
                 """)
+                st.markdown('---')
+                st.info('*Developed by Hikmet Can Çubukçu, MD, EuSpLM* <hikmetcancubukcu@gmail.com>')
                      
 # action after clicking the button "simulate & analyze" 
 if analyze_button:
