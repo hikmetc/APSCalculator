@@ -451,5 +451,5 @@ if analyze_button:
     except ValueError: 
         st.error('Inappropriate clinical decision limit was entered.', icon="❗")
 else:
-    st.info('Please upload your file', icon = "📁")
+    st.info('Upload your file and follow the instructions to calculate APS', icon = "📁")
         
