@@ -128,9 +128,9 @@ with tab1:
                 | 90 | 100 |
                 | 170 | 110 |        
                 
-                2. Then, enter the number of clinical decision limits you want to include APS determination processs
+                2. Then, enter the number of clinical decision limits you want to include in the APS determination processs
                 3. Enter the clinical decision limit(s)
-                4. Enter the aggreement thresholds for minimum, desirable and optimal analytical performance specifications.
+                4. Enter the aggreement thresholds that will be used to determine minimum, desirable and optimal analytical performance specifications.
                 5. Push "Simulate & Analyze" button
                 
                 #### Simulation & Calculation Process
@@ -174,7 +174,7 @@ with tab1:
 # action after clicking the button "simulate & analyze" 
 if analyze_button:
     try:
-        with st.spinner('**Please wait...**'):
+        with st.spinner('**Please wait... Status:**'):
             placeholder = st.empty()
             placeholder.success('**Data preprocessing**', icon = "📂")
             
@@ -451,4 +451,6 @@ if analyze_button:
         st.error('Please upload your file')
     except ValueError: 
         st.error('Inappropriate clinical decision limit was entered.', icon="❗")
+else:
+    st.warning('Please upload your file', icon = "📁")
         
