@@ -283,7 +283,7 @@ if analyze_button:
                 # histogram of original data
                 col1, col2 = st.columns(2)
                 col1.info('Revise your clinical decision limits if the category intervals given are not appropriate', icon = "ℹ️")
-                col2.create_table(names)
+                col2.write(create_table(names))
                 
                 st.write(" ")
                 st.markdown('###### **:green[Histogram of the original data]**')
