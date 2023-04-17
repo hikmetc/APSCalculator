@@ -49,34 +49,34 @@ with st.sidebar:
     
     #st.subheader('Enter Clinical Decision Limit(s) Below')
     if number_CDL == 1:
-        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** The input value is included in sublevel category. Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f", key=1)
+        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f", key=1)
     elif number_CDL == 2:
-        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** The input value is included in sublevel category. Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=2)
+        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=2)
         cdl_2 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=3)
     elif number_CDL == 3:
-        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** The input value is included in sublevel category. Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=4)
+        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=4)
         cdl_2 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=5)
         cdl_3 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=6)
     elif number_CDL == 4:
-        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** The input value is included in sublevel category. Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=7)
+        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=7)
         cdl_2 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=8)
         cdl_3 = st.number_input(label='',min_value=0.00000 ,format="%.f",key=9)
         cdl_4 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=10)
     elif number_CDL == 5:
-        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** The input value is included in sublevel category. Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=11)
+        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=11)
         cdl_2 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=12)
         cdl_3 = st.number_input(label='',min_value=0.00000 ,format="%.f",key=13)
         cdl_4 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=14)
         cdl_5 = st.number_input(label='',min_value=0.00000 ,format="%.f",key=15)
     elif number_CDL == 6:
-        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** The input value is included in sublevel category. Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=16)
+        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=16)
         cdl_2 = st.number_input(label='',min_value=0.00000 ,format="%.f",key=17)
         cdl_3 = st.number_input(label='',min_value=0.00000 ,format="%.f",key=18)
         cdl_4 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=19)
         cdl_5 = st.number_input(label='',min_value=0.00000 ,format="%.f",key=20)
         cdl_6 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=21)
     elif number_CDL == 7:
-        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** The input value is included in sublevel category. Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=22)
+        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=22)
         cdl_2 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=23)
         cdl_3 = st.number_input(label='',min_value=0.00000 ,format="%.f",key=24)
         cdl_4 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=25)
@@ -357,8 +357,8 @@ if analyze_button:
             # ------------------------------------------------------------------------------------
             
             # Disagreement based calculation
-            bins_k = [0, min_agg_threshold/100-0.0000000001, des_agg_threshold/100-0.0000000001, opt_agg_threshold/100-0.0000000001, np.inf]
-            names_k = [f'<{min_agg_threshold}',f'≥{min_agg_threshold}%', f'≥{des_agg_threshold}%', f'≥{opt_agg_threshold}%']
+            bins_k = [0, (min_agg_threshold/100)-0.0000000001, (des_agg_threshold/100)-0.0000000001, (opt_agg_threshold/100)-0.0000000001, np.inf]
+            names_k = [f'<{min_agg_threshold}%',f'≥{min_agg_threshold}%', f'≥{des_agg_threshold}%', f'≥{opt_agg_threshold}%']
             cat_Agree= pd.cut(error_kappa_table_2['Agreement'], bins_k, labels=names_k)
             cat_Agree_df= pd.DataFrame(cat_Agree)
             
@@ -399,7 +399,7 @@ if analyze_button:
                 ylim_v3 = round(error_kappa_table_2_v3[error_kappa_table_2_v3['Agreement']>=des_agg_threshold]['Measurement Uncertainty'].max(), 1)
                 ylim_v4 = round(error_kappa_table_2_v3[error_kappa_table_2_v3['Agreement']>=opt_agg_threshold]['Measurement Uncertainty'].max(), 1)
 
-                # horizontal lines percentiles 90, 95 99
+                # horizontal lines percentiles agreement thresholds
                 plt.axvline(x=min_agg_threshold, color= 'red', alpha = 0.4, linestyle="--",linewidth=1.5) 
                 plt.text(min_agg_threshold+0.1,ylim_v1,f'{min_agg_threshold}% Agreement',rotation=0,color= 'black')
                 plt.text(min_agg_threshold+0.1,ylim_v2+0.3,str(ylim_v2),rotation=0,color= 'black',fontstyle="oblique")
