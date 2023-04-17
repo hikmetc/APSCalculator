@@ -270,8 +270,8 @@ if analyze_button:
 
             with tab2:
                 # histogram of original data
-                st.info(f'Your category intervals based your clinical decision limits: {names}')
-                st.info('Revise your clinical decision limits if the category intervals are not appropriate')
+                st.markdown(f':blue[Your category intervals based your clinical decision limits: **{names}**]')
+                st.markdown('Revise your clinical decision limits if the category intervals are not appropriate')
                 st.markdown('###### **:green[Histogram of the original data]**')
                 fig = plt.figure(figsize=(18, 8))
                 sns.histplot(data=analyte_last_df, x=column_name, kde=False, hue="Analyte_category",
