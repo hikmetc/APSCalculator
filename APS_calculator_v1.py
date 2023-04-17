@@ -183,6 +183,10 @@ def count_decimal_places(number):
 def check_integer(cdl_st):
     if count_decimal_places(cdl_st) == 0:
         return int(cdl_st)
+    elif count_decimal_places(cdl_st) == 1:
+        frac, whole = math.modf(cdl_st)
+        if frac == 0:
+            return int(cdl_st)
     else:
         return cdl_st
           
