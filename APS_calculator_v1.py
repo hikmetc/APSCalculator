@@ -49,34 +49,34 @@ with st.sidebar:
     
     #st.subheader('Enter Clinical Decision Limit(s) Below')
     if number_CDL == 1:
-        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below** The input value is included in sublevel category. Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f", key=1)
+        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** The input value is included in sublevel category. Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f", key=1)
     elif number_CDL == 2:
-        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below**',min_value=0.00000 ,format="%.f",key=2)
+        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** The input value is included in sublevel category. Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=2)
         cdl_2 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=3)
     elif number_CDL == 3:
-        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below**',min_value=0.00000 ,format="%.f",key=4)
+        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** The input value is included in sublevel category. Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=4)
         cdl_2 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=5)
         cdl_3 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=6)
     elif number_CDL == 4:
-        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below**',min_value=0.00000 ,format="%.f",key=7)
+        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** The input value is included in sublevel category. Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=7)
         cdl_2 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=8)
         cdl_3 = st.number_input(label='',min_value=0.00000 ,format="%.f",key=9)
         cdl_4 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=10)
     elif number_CDL == 5:
-        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below**',min_value=0.00000 ,format="%.f",key=11)
+        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** The input value is included in sublevel category. Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=11)
         cdl_2 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=12)
         cdl_3 = st.number_input(label='',min_value=0.00000 ,format="%.f",key=13)
         cdl_4 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=14)
         cdl_5 = st.number_input(label='',min_value=0.00000 ,format="%.f",key=15)
     elif number_CDL == 6:
-        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below**',min_value=0.00000 ,format="%.f",key=16)
+        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** The input value is included in sublevel category. Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=16)
         cdl_2 = st.number_input(label='',min_value=0.00000 ,format="%.f",key=17)
         cdl_3 = st.number_input(label='',min_value=0.00000 ,format="%.f",key=18)
         cdl_4 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=19)
         cdl_5 = st.number_input(label='',min_value=0.00000 ,format="%.f",key=20)
         cdl_6 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=21)
     elif number_CDL == 7:
-        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below**',min_value=0.00000 ,format="%.f",key=22)
+        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** The input value is included in sublevel category. Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=22)
         cdl_2 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=23)
         cdl_3 = st.number_input(label='',min_value=0.00000 ,format="%.f",key=24)
         cdl_4 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=25)
@@ -239,27 +239,27 @@ if analyze_button:
 
             elif number_CDL == 3:
                 bins = [0, cdl_1-0.000001, cdl_2, cdl_3, np.inf]
-                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'>{check_number(cdl_3)}']
+                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'≥{check_number(add_one(cdl_3))}']
                 value = [1, 2, 3, 4]
 
             elif number_CDL == 4:
                 bins = [0, cdl_1-0.000001, cdl_2, cdl_3, cdl_4, np.inf]
-                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'{check_number(add_one(cdl_3))}-{check_number(cdl_4)}',f'>{check_number(cdl_4)}']
+                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'{check_number(add_one(cdl_3))}-{check_number(cdl_4)}',f'≥{check_number(add_one(cdl_4))}']
                 value = [1, 2, 3, 4, 5]
 
             elif number_CDL == 5:
                 bins = [0, cdl_1-0.000001, cdl_2, cdl_3, cdl_4, cdl_5, np.inf]
-                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'{check_number(add_one(cdl_3))}-{check_number(cdl_4)}',f'{check_number(add_one(cdl_4))}-{check_number(cdl_5)}',f'>{check_number(cdl_5)}']
+                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'{check_number(add_one(cdl_3))}-{check_number(cdl_4)}',f'{check_number(add_one(cdl_4))}-{check_number(cdl_5)}',f'≥{check_number(add_one(cdl_5))}']
                 value = [1, 2, 3, 4, 5, 6]
 
             elif number_CDL == 6:
                 bins = [0, cdl_1-0.000001, cdl_2, cdl_3, cdl_4, cdl_5, cdl_6, np.inf]
-                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'{check_number(add_one(cdl_3))}-{check_number(cdl_4)}',f'{check_number(add_one(cdl_4))}-{check_number(cdl_5)}',f'{check_number(add_one(cdl_5))}-{check_number(cdl_6)}',f'>{check_number(cdl_6)}']
+                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'{check_number(add_one(cdl_3))}-{check_number(cdl_4)}',f'{check_number(add_one(cdl_4))}-{check_number(cdl_5)}',f'{check_number(add_one(cdl_5))}-{check_number(cdl_6)}',f'≥{check_number(add_one(cdl_6))}']
                 value = [1, 2, 3, 4, 5, 6, 7]
 
             elif number_CDL == 7:
                 bins = [0, cdl_1-0.000001, cdl_2, cdl_3, cdl_4, cdl_5, cdl_6, cdl_7, np.inf]
-                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'{check_number(add_one(cdl_3))}-{check_number(cdl_4)}',f'{check_number(add_one(cdl_4))}-{check_number(cdl_5)}',f'{check_number(add_one(cdl_5))}-{check_number(cdl_6)}',f'{check_number(add_one(cdl_6))}-{check_number(cdl_7)}',f'>{check_number(cdl_7)}']
+                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'{check_number(add_one(cdl_3))}-{check_number(cdl_4)}',f'{check_number(add_one(cdl_4))}-{check_number(cdl_5)}',f'{check_number(add_one(cdl_5))}-{check_number(cdl_6)}',f'{check_number(add_one(cdl_6))}-{check_number(cdl_7)}',f'≥{check_number(add_one(cdl_7))}']
                 value = [1, 2, 3, 4, 5, 6, 7, 8]
                 
             else:
