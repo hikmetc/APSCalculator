@@ -175,7 +175,7 @@ with tab1:
 # table maker from list 
 def create_table(category_intervals):
     # Create the table header
-    table = f"|{'Category':<12}|\n"
+    table = f"|{'Category Intervals':<12}|\n"
     table += f"|{'-'*12}|\n"
     
     # Add each category to the table
@@ -281,7 +281,7 @@ if analyze_button:
 
             with tab2:
                 # histogram of original data
-                col1, col2 = st.columns(2)
+                col1, col2 = st.columns([4,1.2])
                 col1.info('Revise your clinical decision limits if the category intervals given are not appropriate', icon = "ℹ️")
                 col2.write(create_table(names))
                 
