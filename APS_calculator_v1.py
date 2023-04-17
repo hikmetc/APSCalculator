@@ -181,7 +181,7 @@ if analyze_button:
             # Numeric data to categorical data conversion
             if number_CDL == 1:
                 bins = [0, cdl_1-0.000001,np.inf]
-                names = [f'<{cdl_1}', f'>{cdl_1}']
+                names = [f'<{cdl_1}', f'≥{cdl_1}']
                 value = [1, 2]
 
             elif number_CDL == 2:
