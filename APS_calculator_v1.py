@@ -192,8 +192,9 @@ if analyze_button:
 
             elif number_CDL == 3:
                 bins = [0, cdl_1-0.000001, cdl_2, cdl_3, np.inf]
-
-                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{cdl_2}-{cdl_3}' ,f'>{cdl_3}']
+                increment = Decimal('1') / (Decimal('10') ** Decimal(str(Decimal(cdl_2)).count('.') - 1))
+                cdl_22 = input_value.quantize(Decimal('1')) + increment
+                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{cdl_22}-{cdl_3}' ,f'>{cdl_3}']
                 value = [1, 2, 3, 4]
 
             elif number_CDL == 4:
