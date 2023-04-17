@@ -6,6 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import time
+from math import ceil
 from decimal import Decimal
 import seaborn as sns
 from sklearn.metrics import confusion_matrix
@@ -172,19 +173,21 @@ with tab1:
                 st.markdown('---')
                 
 # converter function for cutting bins
-def count_decimal_places(number):
-    decimal_number = Decimal(str(number)) 
-    if decimal_number % 1 != 0:
-        num_decimal_places = len(str(decimal_number).split('.')[1]) 
+def add_one(num):
+    if isinstance(num, int):
+        return num + 1
+    elif isinstance(num, float):
+        if num.is_integer():
+            return int(num) + 1
+        else:
+            num_str = str(num)
+            num_decimals = len(num_str.split('.')[1])
+            if num_decimals == 1 and num_str.endswith('0'):
+                return int(num) + 1
+            else:
+                return round(num + 0.1**num_decimals, num_decimals)
     else:
-        num_decimal_places = 1 
-    return num_decimal_places
-
-def check_integer(cdl_st):
-    if count_decimal_places(cdl_st) == 1:
-        return int(cdl_st)
-    else:
-        return cdl_st
+        return "Input is not a number."
           
 # action after clicking the button "simulate & analyze" 
 if analyze_button:
@@ -207,10 +210,8 @@ if analyze_button:
 
             elif number_CDL == 3:
                 bins = [0, cdl_1-0.000001, cdl_2, cdl_3, np.inf]
-                cdl_st = check_integer(cdl_2)
-                cdl_22 =(cdl_st*(10**(count_decimal_places(cdl_st)))+1) / 10**(count_decimal_places(cdl_st))
 
-                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{cdl_22}-{cdl_3}' ,f'>{cdl_3}']
+                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{add_one(cdl_2)}-{cdl_3}' ,f'>{cdl_3}']
                 value = [1, 2, 3, 4]
 
             elif number_CDL == 4:
