@@ -175,7 +175,7 @@ with tab1:
 # table maker from list 
 def create_table(category_intervals):
     # Create the table header
-    table = f"|{'Category Intervals':<12}|\n"
+    table = f"|{':blue[Category Intervals]':<12}|\n"
     table += f"|{'-'*12}|\n"
     
     # Add each category to the table
