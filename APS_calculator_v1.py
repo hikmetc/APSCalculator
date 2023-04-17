@@ -174,8 +174,8 @@ with tab1:
 # converter function for cutting bins
 def count_decimal_places(number):
     decimal_number = Decimal(str(number)) 
-    if decimal_number % 1 != 0: 
-	num_decimal_places = len(str(decimal_number).split('.')[1]) 
+    if decimal_number % 1 != 0:
+		    num_decimal_places = len(str(decimal_number).split('.')[1]) 
     else: num_decimal_places = 1 
     return num_decimal_places
                 
