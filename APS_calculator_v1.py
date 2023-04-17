@@ -170,7 +170,16 @@ with tab1:
                 
                 """)
                 st.markdown('---')
-                     
+                
+# converter function for cutting bins
+def count_decimal_places(number):
+    decimal_number = Decimal(str(number)) 
+	if decimal_number % 1 != 0: 
+		num_decimal_places = len(str(decimal_number).split('.')[1]) 
+	else: num_decimal_places = 1 
+    return num_decimal_places
+                
+          
 # action after clicking the button "simulate & analyze" 
 if analyze_button:
     try:
@@ -192,8 +201,7 @@ if analyze_button:
 
             elif number_CDL == 3:
                 bins = [0, cdl_1-0.000001, cdl_2, cdl_3, np.inf]
-                increment = Decimal('1') / (Decimal('10') ** Decimal(str(Decimal(cdl_2)).count('.') - 1))
-                cdl_22 = (Decimal(str(cdl_2)) + increment).quantize(Decimal('0.0'))
+                cdl22 = ((cdl2 *(10^count_decimal_places(cdl2))) +1) / 10^count_decimal_places(cdl2)
 
                 names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{cdl_22}-{cdl_3}' ,f'>{cdl_3}']
                 value = [1, 2, 3, 4]
