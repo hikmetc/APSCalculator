@@ -202,7 +202,7 @@ if analyze_button:
 
             elif number_CDL == 3:
                 bins = [0, cdl_1-0.000001, cdl_2, cdl_3, np.inf]
-                cdl22 = ((cdl2 *(10^count_decimal_places(cdl2))) +1) / 10^count_decimal_places(cdl2)
+                cdl22 =(cdl2*(10**(count_decimal_places(cdl2)))+1) / 10**(count_decimal_places(cdl2))
 
                 names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{cdl_22}-{cdl_3}' ,f'>{cdl_3}']
                 value = [1, 2, 3, 4]
