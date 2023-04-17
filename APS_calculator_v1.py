@@ -6,6 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import time
+from decimal import Decimal
 import seaborn as sns
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
@@ -191,7 +192,8 @@ if analyze_button:
 
             elif number_CDL == 3:
                 bins = [0, cdl_1-0.000001, cdl_2, cdl_3, np.inf]
-                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{cdl_2}-{cdl_3}' ,f'>{cdl_3}']
+                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', 
+                         f'{cdl_2 + Decimal('1') / (Decimal('10') ** Decimal(str(input_value).count('.') - 1))}-{cdl_3}' ,f'>{cdl_3}']
                 value = [1, 2, 3, 4]
 
             elif number_CDL == 4:
