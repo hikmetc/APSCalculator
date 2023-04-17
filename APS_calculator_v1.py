@@ -282,17 +282,18 @@ if analyze_button:
             with tab2:
                 # histogram of original data
                 col1, col2 = st.columns([4,1.2])
-                col1.info('Revise your clinical decision limits if the category intervals given are not appropriate', icon = "ℹ️")
+                col1.write(" ")
+                col1.info('Revise your clinical decision limits if the category intervals are not appropriate', icon = "ℹ️")
                 col2.write(create_table(names))
                 
                 st.write(" ")
-                st.markdown('###### **:green[Histogram of the original data]**')
+                st.markdown('##### **:green[Histogram of the original data]**')
                 fig = plt.figure(figsize=(18, 8))
                 sns.histplot(data=analyte_last_df, x=column_name, kde=False, hue="Analyte_category",
                                     discrete= False)
                 plt.xlim(analyte_last_df[column_name].quantile(.001), analyte_last_df[column_name].quantile(.999))
                 st.pyplot(fig)
-                st.markdown('###### **:green[Density plot of the original data]**')
+                st.markdown('##### **:green[Density plot of the original data]**')
                 fig2 = plt.figure(figsize=(18, 8))
                 sns.kdeplot(data=analyte_last_df, x=column_name, hue="Analyte_category", multiple="stack", alpha=.5,common_grid=True, fill=True, linewidth=0.1)
                 plt.xlim(analyte_last_df[column_name].quantile(.001), analyte_last_df[column_name].quantile(.999))
