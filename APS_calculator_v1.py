@@ -171,9 +171,20 @@ with tab1:
                 
                 """)
                 st.markdown('---')
-                
-# bins format checker function
+     
+# table maker from list 
+def create_table(category_intervals):
+    # Create the table header
+    table = f"|{'Category':<12}|\n"
+    table += f"|{'-'*12}|\n"
+    
+    # Add each category to the table
+    for category in category_intervals:
+        table += f"|{category:<12}|\n"
+    
+    return table
 
+# bins format checker function
 def check_number(num):
     if isinstance(num, int):
         return num
@@ -270,8 +281,10 @@ if analyze_button:
 
             with tab2:
                 # histogram of original data
-                st.info('Revise your clinical decision limits if the category intervals given below are not appropriate', icon = "ℹ️")
-                st.markdown(f'###### **:blue[Your category intervals: {names}]**')
+                col1, col2 = st.columns(2)
+                col1.info('Revise your clinical decision limits if the category intervals given are not appropriate', icon = "ℹ️")
+                col2.create_table(names)
+                
                 st.write(" ")
                 st.markdown('###### **:green[Histogram of the original data]**')
                 fig = plt.figure(figsize=(18, 8))
