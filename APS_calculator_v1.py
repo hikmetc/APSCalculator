@@ -49,7 +49,7 @@ with st.sidebar:
     
     #st.subheader('Enter Clinical Decision Limit(s) Below')
     if number_CDL == 1:
-        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below**',min_value=0.00000 ,format="%.f", key=1)
+        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below** The input value is included in sublevel category. Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f", key=1)
     elif number_CDL == 2:
         cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below**',min_value=0.00000 ,format="%.f",key=2)
         cdl_2 = st.number_input(label='',min_value=0.00000 ,format="%.f", key=3)
