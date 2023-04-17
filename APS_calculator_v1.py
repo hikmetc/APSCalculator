@@ -180,38 +180,38 @@ if analyze_button:
             column_name = analyte_name_box
             # Numeric data to categorical data conversion
             if number_CDL == 1:
-                bins = [0, cdl_1,np.inf]
-                names = [f'<{cdl_1}', f'≥{cdl_1}']
+                bins = [0, cdl_1-0.000001,np.inf]
+                names = [f'<{cdl_1}', f'>{cdl_1}']
                 value = [1, 2]
 
             elif number_CDL == 2:
-                bins = [0, cdl_1, cdl_2, np.inf]
-                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}' ,f'≥{cdl_2}']
+                bins = [0, cdl_1-0.000001, cdl_2, np.inf]
+                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}' ,f'>{cdl_2}']
                 value = [1, 2, 3]
 
             elif number_CDL == 3:
-                bins = [0, cdl_1, cdl_2, cdl_3, np.inf]
-                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{cdl_2}-{cdl_3}' ,f'≥{cdl_3}']
+                bins = [0, cdl_1-0.000001, cdl_2, cdl_3, np.inf]
+                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{cdl_2}-{cdl_3}' ,f'>{cdl_3}']
                 value = [1, 2, 3, 4]
 
             elif number_CDL == 4:
-                bins = [0, cdl_1, cdl_2, cdl_3, cdl_4, np.inf]
-                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{cdl_2}-{cdl_3}' ,f'{cdl_3}-{cdl_4}',f'≥{cdl_4}']
+                bins = [0, cdl_1-0.000001, cdl_2, cdl_3, cdl_4, np.inf]
+                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{cdl_2}-{cdl_3}' ,f'{cdl_3}-{cdl_4}',f'>{cdl_4}']
                 value = [1, 2, 3, 4, 5]
 
             elif number_CDL == 5:
-                bins = [0, cdl_1, cdl_2, cdl_3, cdl_4, cdl_5, np.inf]
-                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{cdl_2}-{cdl_3}' ,f'{cdl_3}-{cdl_4}',f'{cdl_4}-{cdl_5}',f'≥{cdl_5}']
+                bins = [0, cdl_1-0.000001, cdl_2, cdl_3, cdl_4, cdl_5, np.inf]
+                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{cdl_2}-{cdl_3}' ,f'{cdl_3}-{cdl_4}',f'{cdl_4}-{cdl_5}',f'>{cdl_5}']
                 value = [1, 2, 3, 4, 5, 6]
 
             elif number_CDL == 6:
-                bins = [0, cdl_1, cdl_2, cdl_3, cdl_4, cdl_5, cdl_6, np.inf]
-                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{cdl_2}-{cdl_3}' ,f'{cdl_3}-{cdl_4}',f'{cdl_4}-{cdl_5}',f'{cdl_5}-{cdl_6}',f'≥{cdl_6}']
+                bins = [0, cdl_1-0.000001, cdl_2, cdl_3, cdl_4, cdl_5, cdl_6, np.inf]
+                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{cdl_2}-{cdl_3}' ,f'{cdl_3}-{cdl_4}',f'{cdl_4}-{cdl_5}',f'{cdl_5}-{cdl_6}',f'>{cdl_6}']
                 value = [1, 2, 3, 4, 5, 6, 7]
 
             elif number_CDL == 7:
-                bins = [0, cdl_1, cdl_2, cdl_3, cdl_4, cdl_5, cdl_6, cdl_7, np.inf]
-                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{cdl_2}-{cdl_3}' ,f'{cdl_3}-{cdl_4}',f'{cdl_4}-{cdl_5}',f'{cdl_5}-{cdl_6}',f'{cdl_6}-{cdl_7}',f'≥{cdl_7}']
+                bins = [0, cdl_1-0.000001, cdl_2, cdl_3, cdl_4, cdl_5, cdl_6, cdl_7, np.inf]
+                names = [f'<{cdl_1}', f'{cdl_1}-{cdl_2}', f'{cdl_2}-{cdl_3}' ,f'{cdl_3}-{cdl_4}',f'{cdl_4}-{cdl_5}',f'{cdl_5}-{cdl_6}',f'{cdl_6}-{cdl_7}',f'>{cdl_7}']
                 value = [1, 2, 3, 4, 5, 6, 7, 8]
                 
             else:
