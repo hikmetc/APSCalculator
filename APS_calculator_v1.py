@@ -270,7 +270,7 @@ if analyze_button:
 
             with tab2:
                 # histogram of original data
-                st.markdown(f'Your category intervals based your clinical decision limits: {names}')
+                st.markdown(f'###### **:blue[Your category intervals based your clinical decision limits: {names}]')
                 st.markdown('Revise your clinical decision limits if the category intervals are not appropriate')
                 st.markdown('###### **:green[Histogram of the original data]**')
                 fig = plt.figure(figsize=(18, 8))
