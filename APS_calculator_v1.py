@@ -234,7 +234,7 @@ if analyze_button:
 
             elif number_CDL == 2: # MODIFED
                 bins = [0, cdl_1-0.000001, cdl_2, np.inf]
-                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}' ,f'≥{check_number(add_one(cdl_2)}']
+                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}' ,f'≥{check_number(add_one(cdl_2))}']
                 value = [1, 2, 3]
 
             elif number_CDL == 3:
