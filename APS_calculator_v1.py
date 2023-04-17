@@ -172,6 +172,24 @@ with tab1:
                 """)
                 st.markdown('---')
                 
+# bins format checker function
+
+def check_number(num):
+    if isinstance(num, int):
+        return num
+    elif isinstance(num, float):
+        if num.is_integer():
+            return int(num)
+        else:
+            num_str = str(num)
+            num_decimals = len(num_str.split('.')[1])
+            if num_decimals == 1 and num_str.endswith('0'):
+                return int(num)
+            else:
+                return num
+    else:
+        return "Input is not a number."
+    
 # converter function for cutting bins
 def add_one(num):
     if isinstance(num, int):
