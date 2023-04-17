@@ -175,7 +175,7 @@ with tab1:
 def count_decimal_places(number):
     decimal_number = Decimal(str(number)) 
     if decimal_number % 1 != 0:
-		    num_decimal_places = len(str(decimal_number).split('.')[1]) 
+	num_decimal_places = len(str(decimal_number).split('.')[1]) 
     else: num_decimal_places = 1 
     return num_decimal_places
                 
