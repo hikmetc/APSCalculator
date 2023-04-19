@@ -116,7 +116,7 @@ with tab1:
                 st.markdown("""
                 ### A Data-Driven Tool for Setting Analytical Performance Specifications Based on Intended Clinical Settings and Population    
                 This web application is designed to help laboratory professinals to determine 
-                their analytical performance specifications based on their intended clinical setting and population of concern.
+                their analytical performance specifications for measurement uncertainty based on their intended clinical setting and population of concern.
                 
                 #### Instructions
                 
