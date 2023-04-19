@@ -157,7 +157,6 @@ with tab1:
                 MU: Measurement uncertainty
                 """)
                 st.markdown("""        
-                Then, the aggreement between original results and measured results (results with MU) were assesed.
                 
                 ##### **The simulation process was performed in three steps as follows:**
             
