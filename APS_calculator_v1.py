@@ -131,13 +131,14 @@ with tab1:
                 | 170 | 110 |        
                 
                 2. Then, enter the number of clinical decision limits you want to include in the APS determination processs
-                3. Enter the clinical decision limit(s)
+                3. Enter the value(s) of clinical decision limit(s)
                 4. Enter the aggreement thresholds that will be used to determine minimum, desirable and optimal analytical performance specifications.
-                5. Push "Simulate & Analyze" button
+                5. Click on "Simulate & Analyze" button
                 
                 #### Simulation & Calculation Process
                 
-                Firstly, APS calculator introduces different degrees of measurement uncertainty on your data by simulation, as follows: 
+                During the simulation process, laboratory results uploaded into the application are assumed to represent the "true" values. 
+                The application then simulates "measured" values by introducing measurement uncertainty into the actual concentration of the analyte, using the following formula: 
                 """)
                 formula = """
                 Result_M = Result_T*[(1+ n(0,1))*MU]
@@ -164,10 +165,16 @@ with tab1:
                 - Step 2- Measured (simulated) result generation
                 - Step 3- Recategorization of measured (simulated) concentration (as mentioned in step 1)
                 
+                The simulation is repeated for 800 different measurement uncertainty rates ranging from 0% to 80% with intervals of 0.1%. 
+                
                 ##### **Calculation Process**
                 
                 Aggreement level between true concentration and measured (simulated) concentration of the analyte were calculated. 
                 Minimum, desirable, and optimal analytical performance specifications were determined according to the aggreement thresholds that entered previously.
+                
+                ##### **Contour Plots**
+                The web application produces a series of contour plots that visually represent agreement rates as percentages on the x-axis and their corresponding measurement uncertainty values on the y-axis. 
+                Horizontal lines are added to indicate the minimum, desirable, and optimal APSs for measurement uncertainty, corresponding to different agreement levels. 
                 
                 """)
                 st.markdown('---')
