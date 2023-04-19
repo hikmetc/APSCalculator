@@ -107,14 +107,14 @@ with st.sidebar:
 col1, col2 = st.columns(2)
 col1.title(':green[*APS Calculator*]')
 col2.image('./images/eflm_icon.png')
-st.markdown('#### **:blue[A Data-Driven Approach for Setting Analytical Performance Specifications Based on Intended Clinical Settings and Population]**')
+st.markdown('#### **:blue[A Data-Driven Tool for Setting Analytical Performance Specifications Based on Intended Clinical Settings and Population]**')
 st.markdown('---')
 # TABS
 tab1, tab2, tab3, tab4 = st.tabs(["📖 **Instructions**", "📊 **:green[Distribution of data]**", 
                                 "🚦 **:blue[APS based on overall agreement]**", "🚥 **:violet[APS based on sublevel aggreement]**"],)
 with tab1:
                 st.markdown("""
-                ### A Data-Driven Approach For Setting Analytical Performance Specifications Based on Intended Clinical Settings and Population    
+                ### A Data-Driven Tool for Setting Analytical Performance Specifications Based on Intended Clinical Settings and Population    
                 This web application is designed to help laboratory professinals to determine 
                 their analytical performance specifications based on their intended clinical setting and population of concern.
                 
