@@ -93,7 +93,7 @@ with st.sidebar:
         min_agg_threshold = st.number_input('Minimum', value = 90)
     with c2:
         des_agg_threshold = st.number_input('Desirable', value = 95)
-    with c1:
+    with c3:
         opt_agg_threshold = st.number_input('Optimal', value = 99) 
     
         
