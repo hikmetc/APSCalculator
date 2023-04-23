@@ -494,11 +494,11 @@ if analyze_button:
                     col22, col33 = st.columns([1.1, 4])
                     col22.write(' ') # >33% MU is unaccceptable
                     if ylim_v2 > 33:
-                        ylim_v2 = "Not available
+                        ylim_v2 = "Not available"
                     if ylim_v3 > 33:
-                        ylim_v3 = "Not available
+                        ylim_v3 = "Not available"
                     if ylim_v4 > 33:
-                        ylim_v4 = "Not available
+                        ylim_v4 = "Not available"
                     col22.markdown(f"""
                                 | APS level | MU |
                                 | ----------- | ----------- |
