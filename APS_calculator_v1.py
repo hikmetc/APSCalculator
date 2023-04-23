@@ -429,13 +429,13 @@ if analyze_button:
                 # >33% MU is unaccceptable
                 if ylim_v2 > 33:
                     ylim_v2 = "NA"
-                    na_quote_1 = "NA: not available"
+                    na_quote_1 = "NA: Not available"
                 if ylim_v3 > 33:
                     ylim_v3 = "NA"
-                    na_quote_1 = "NA: not available"
+                    na_quote_1 = "NA: Not available"
                 if ylim_v4 > 33:
                     ylim_v4 = "NA"
-                    na_quote_1 = "NA: not available"
+                    na_quote_1 = "NA: Not available"
                 col22.write(na_quote_1) # >33% MU is unaccceptable
                 col22.markdown(f"""
                             | APS level | MU |
@@ -510,13 +510,13 @@ if analyze_button:
                     # >33% MU is unaccceptable
                     if ylim_v2 > 33:
                         ylim_v2 = "NA"
-                        na_quote_2 = "NA: not available"
+                        na_quote_2 = "NA: Not available"
                     if ylim_v3 > 33:
                         ylim_v3 = "NA"
-                        na_quote_2 = "NA: not available"
+                        na_quote_2 = "NA: Not available"
                     if ylim_v4 > 33:
                         ylim_v4 = "NA"
-                        na_quote_2 = "NA: not available"
+                        na_quote_2 = "NA: Not available"
                     col22.write(na_quote_2) # >33% MU is unaccceptable
                     col22.markdown(f"""
                                 | APS level | MU |
