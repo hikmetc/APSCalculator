@@ -114,7 +114,7 @@ tab1, tab2, tab3, tab4 = st.tabs(["📖 **Instructions**", "📊 **:green[Distri
                                 "🚦 **:blue[APS based on overall agreement]**", "🚥 **:violet[APS based on sublevel aggreement]**"],)
 with tab1:
                 st.markdown("""
-                ### A Data-Driven Tool for Setting Analytical Performance Specifications Based on Intended Clinical Settings and Population    
+                ### A Data-Driven Tool for Setting Analytical Performance Specifications for Measurement Uncertainty Based on Specific Clinical Settings and Population Data    
                 This web application is designed to help laboratory professinals to determine 
                 their analytical performance specifications for measurement uncertainty based on their intended clinical setting and population of concern.
                 
@@ -141,34 +141,29 @@ with tab1:
                 The application then simulates "measured" values by introducing measurement uncertainty into the actual concentration of the analyte, using the following formula: 
                 """)
                 formula = """
-                Result_M = Result_T*[(1+ n(0,1))*MU]
+                Result_M = Result_O*[(1+ n(0,1))*MU]
                 """
                 st.latex(formula)       
                 definition_caption = """
-                ResultT: True concentration of the analyte
+                ResultO: Original concentration of the measurand
                 ResultM: Measured (Simulated) concentration of an analyte
                 n(0,1): A random number generated with normal distribution (mean = 0, standard deviaiton = 1)\n
-                MU: Measurement uncertainty
+                MU: Relative standard measurement uncertainty
                 """
-                st.caption("""
-                ResultT: True concentration of the analyte,
-                ResultM: Measured (Simulated) concentration of an analyte,
-                n(0,1): A random number generated with normal distribution (mean = 0, standard deviaiton = 1),
-                MU: Measurement uncertainty
-                """)
+                st.caption(definition_caption)
                 st.markdown("""        
                 
                 ##### **The simulation process was performed in three steps as follows:**
             
-                - Step 1- Categorization of true concentration of the analyte according to its clinical decision limits.
+                - Step 1- Categorization of original concentration of the analyte according to its clinical decision limits.
                 - Step 2- Measured (simulated) result generation
                 - Step 3- Recategorization of measured (simulated) concentration (as mentioned in step 1)
                 
-                The simulation is repeated for 800 different measurement uncertainty rates ranging from 0% to 80% with intervals of 0.1%. 
+                The simulation is repeated for 331 different measurement uncertainty rates ranging from 0% to 33.1% with intervals of 0.1%. 
                 
                 ##### **Calculation Process**
                 
-                Aggreement level between true concentration and measured (simulated) concentration of the analyte were calculated. 
+                Aggreement level between original concentration and measured (simulated) concentration of the analyte were calculated. 
                 Minimum, desirable, and optimal analytical performance specifications were determined according to the aggreement thresholds that entered previously.
                 
                 ##### **Contour Plots**
