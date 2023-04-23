@@ -323,7 +323,7 @@ if analyze_button:
             imprec_data_raw = pd.Series(imprec_data_raw)
    
             # MU simulation
-            for e in np.arange(0,0.8,0.001): # CV constant
+            for e in np.arange(0,0.333,0.001): # CV constant
                     
                 n_cat_n = []
                 o_cat_n = list(o_cat_n)   
