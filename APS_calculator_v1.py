@@ -487,15 +487,18 @@ if analyze_button:
                     # horizontal lines percentiles 90, 95 99
                     plt.axvline(x=min_agg_threshold, color= 'red', alpha = 0.4, linestyle="--",linewidth=1.5) 
                     plt.text(min_agg_threshold+0.1,ylim_v1,f'{min_agg_threshold}% Agreement',rotation=0,color= 'black')
-                    plt.text(min_agg_threshold+0.1,ylim_v2+0.3,str(ylim_v2),rotation=0,color= 'black',fontstyle="oblique")
+                    if ylim_v2 <=33:
+                        plt.text(min_agg_threshold+0.1,ylim_v2+0.3,str(ylim_v2),rotation=0,color= 'black',fontstyle="oblique")
 
                     plt.axvline(x=des_agg_threshold, color= 'orange', alpha = 0.8,linestyle="--",linewidth=1.5) 
                     plt.text(des_agg_threshold+0.1,ylim_v1,f'{des_agg_threshold}% Agreement',rotation=0,color= 'black')
-                    plt.text(des_agg_threshold+0.1,ylim_v3+0.3,str(ylim_v3),rotation=0,color= 'black',fontstyle="oblique")
+                    if ylim_v3 <=33:
+                        plt.text(des_agg_threshold+0.1,ylim_v3+0.3,str(ylim_v3),rotation=0,color= 'black',fontstyle="oblique")
 
                     plt.axvline(x=opt_agg_threshold, color= 'green', alpha = 0.4,linestyle="--",linewidth=1.5) 
                     plt.text(opt_agg_threshold+0.1,ylim_v1,f'{opt_agg_threshold}% Agreement',rotation=0,color= 'black')
-                    plt.text(opt_agg_threshold+0.1,ylim_v4+0.3,str(ylim_v4),rotation=0,color= 'black',fontstyle="oblique")
+                    if ylim_v4 <=33:
+                        plt.text(opt_agg_threshold+0.1,ylim_v4+0.3,str(ylim_v4),rotation=0,color= 'black',fontstyle="oblique")
 
                     plt.xlim(limit_xn, limit_xp )
                     plt.ylim(0, ylim_v1+1)
