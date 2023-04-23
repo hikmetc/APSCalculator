@@ -425,7 +425,18 @@ if analyze_button:
                 plt.legend(loc = 'lower left', title = 'Agreement Category')
                 # Text info of APS
                 col22, col33 = st.columns([1.1, 4])
-                col22.write(' ')
+                na_quote_1 = ' '
+                # >33% MU is unaccceptable
+                if ylim_v2 > 33:
+                    ylim_v2 = "NA"
+                    na_quote_1 = "NA: not available"
+                if ylim_v3 > 33:
+                    ylim_v3 = "NA"
+                    na_quote_1 = "NA: not available"
+                if ylim_v4 > 33:
+                    ylim_v4 = "NA"
+                    na_quote_1 = "NA: not available"
+                col22.write(na_quote_1) # >33% MU is unaccceptable
                 col22.markdown(f"""
                             | APS level | MU |
                             | ----------- | ----------- |
