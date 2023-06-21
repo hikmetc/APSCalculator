@@ -723,7 +723,7 @@ if analyze_button:
                 if ylim_v4 > 33:
                     ylim_v4 = "NA"
                     na_quote_1 = "NA: Not available"
-                col33.write(na_quote_1) # >33% MU is unaccceptable 
+                 
                 # =0% MU is notobtainable
                 if ylim_v2 == 0:
                     ylim_v2 = "NO"
@@ -734,7 +734,7 @@ if analyze_button:
                 if ylim_v4 == 0:
                     ylim_v4 = "NO"
                     na_quote_2 = "NO: Not obtainable"
-                col33.write(na_quote_2) # =0% MU is notobtainable
+                
                 col33.markdown(f"""
                             | APS level | MU |
                             | ----------- | ----------- |
@@ -742,6 +742,8 @@ if analyze_button:
                             | :green[Desirable] | {ylim_v3} |
                             | :blue[Optimal] | {ylim_v4} |
                             """)
+                col33.write(na_quote_1) # >33% MU is unaccceptable
+                col33.write(na_quote_2) # =0% MU is notobtainable
                 col22.plotly_chart(fig, theme="streamlit", use_container_width=True) # show figure 
                 st.markdown("---")
             
@@ -997,7 +999,7 @@ if analyze_button:
                     if ylim_v4 > 33:
                         ylim_v4 = "NA"
                         na_quote_3 = "NA: Not available"
-                    col33.write(na_quote_3) # >33% MU is unaccceptable 
+                    
                     # =0% MU is notobtainable
                     if ylim_v2 == 0:
                         ylim_v2 = "NO"
@@ -1008,7 +1010,7 @@ if analyze_button:
                     if ylim_v4 == 0:
                         ylim_v4 = "NO"
                         na_quote_4 = "NO: Not obtainable"
-                    col33.write(na_quote_4) # =0% MU is notobtainable
+                    
                     col33.markdown(f"""
                                 | APS level | MU |
                                 | ----------- | ----------- |
@@ -1016,6 +1018,8 @@ if analyze_button:
                                 | :green[Desirable] | {ylim_v3} |
                                 | :blue[Optimal] | {ylim_v4} |            
                                 """)
+                    col33.write(na_quote_3) # >33% MU is unaccceptable 
+                    col33.write(na_quote_4) # =0% MU is notobtainable
                     col22.plotly_chart(fig, theme="streamlit", use_container_width=True) # show figure 
                     st.markdown("---")
             placeholder.success('**Done**', icon="✅")
