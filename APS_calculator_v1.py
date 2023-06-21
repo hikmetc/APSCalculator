@@ -690,7 +690,7 @@ if analyze_button:
                         )
                     ),
                     yaxis=dict(
-                        title='Standard Measurement Uncertainty (%)',
+                        title='Relative Standard Measurement Uncertainty (%)',
                         title_font=dict(
                             size=14,
                         ),
@@ -966,7 +966,7 @@ if analyze_button:
                             )
                         ),
                         yaxis=dict(
-                            title='Standard Measurement Uncertainty (%)',
+                            title='Relative Standard Measurement Uncertainty (%)',
                             title_font=dict(
                                 size=14,
                             ),
