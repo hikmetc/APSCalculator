@@ -712,6 +712,7 @@ if analyze_button:
                 # Text info of APS
                 col22, col33 = st.columns([4, 1])
                 na_quote_1 = ' '
+                na_quote_2 = ' '
                 # >33% MU is unaccceptable
                 if ylim_v2 > 33:
                     ylim_v2 = "NA"
@@ -722,7 +723,18 @@ if analyze_button:
                 if ylim_v4 > 33:
                     ylim_v4 = "NA"
                     na_quote_1 = "NA: Not available"
-                col33.write(na_quote_1) # >33% MU is unaccceptable
+                col33.write(na_quote_1) # >33% MU is unaccceptable 
+                # =0% MU is notobtainable
+                if ylim_v2 == 0:
+                    ylim_v2 = "NO"
+                    na_quote_2 = "NO: Not obtainable"
+                if ylim_v3 == 0:
+                    ylim_v3 = "NO"
+                    na_quote_2 = "NO: Not obtainable"
+                if ylim_v4 == 0:
+                    ylim_v4 = "NO"
+                    na_quote_2 = "NO: Not obtainable"
+                col33.write(na_quote_2) # =0% MU is notobtainable
                 col33.markdown(f"""
                             | APS level | MU |
                             | ----------- | ----------- |
@@ -973,18 +985,30 @@ if analyze_button:
 
                     # Text info of APS
                     col22, col33 = st.columns([4, 1])
-                    na_quote_2 = ' '
+                    na_quote_3 = ' '
+                    na_quote_4 = ' '
                     # >33% MU is unaccceptable
                     if ylim_v2 > 33:
                         ylim_v2 = "NA"
-                        na_quote_2 = "NA: Not available"
+                        na_quote_3 = "NA: Not available"
                     if ylim_v3 > 33:
                         ylim_v3 = "NA"
-                        na_quote_2 = "NA: Not available"
+                        na_quote_3 = "NA: Not available"
                     if ylim_v4 > 33:
                         ylim_v4 = "NA"
-                        na_quote_2 = "NA: Not available"
-                    col33.write(na_quote_2) # >33% MU is unaccceptable
+                        na_quote_3 = "NA: Not available"
+                    col33.write(na_quote_3) # >33% MU is unaccceptable 
+                    # =0% MU is notobtainable
+                    if ylim_v2 == 0:
+                        ylim_v2 = "NO"
+                        na_quote_4 = "NO: Not obtainable"
+                    if ylim_v3 == 0:
+                        ylim_v3 = "NO"
+                        na_quote_4 = "NO: Not obtainable"
+                    if ylim_v4 == 0:
+                        ylim_v4 = "NO"
+                        na_quote_4 = "NO: Not obtainable"
+                    col33.write(na_quote_4) # =0% MU is notobtainable
                     col33.markdown(f"""
                                 | APS level | MU |
                                 | ----------- | ----------- |
