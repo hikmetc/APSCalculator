@@ -106,7 +106,7 @@ with st.sidebar:
     st.info('*Developed by Hikmet Can Çubukçu, MD, EuSpLM* <hikmetcancubukcu@gmail.com>')
     
  
-st.image('./images/APS_calculator_icon.svg')
+st.image('./images/aps_icon.png')
 st.markdown('#### **:blue[A Data-Driven Tool for Setting Analytical Performance Specifications for Measurement Uncertainty Based on Specific Clinical Settings and Population Data]**')
 st.markdown('---')
 # TABS
