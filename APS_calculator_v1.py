@@ -106,9 +106,7 @@ with st.sidebar:
     st.info('*Developed by Hikmet Can Çubukçu, MD, EuSpLM* <hikmetcancubukcu@gmail.com>')
     
  
-col1, col2 = st.columns(2)
-col1.title(':green[*APS Calculator*]')
-col2.image('./images/eflm_icon.png')
+st.image('./images/APS_Calculator_icon.png')
 st.markdown('#### **:blue[A Data-Driven Tool for Setting Analytical Performance Specifications for Measurement Uncertainty Based on Specific Clinical Settings and Population Data]**')
 st.markdown('---')
 # TABS
