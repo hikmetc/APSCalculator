@@ -169,6 +169,14 @@ with tab1:
                 ##### **Contour Plots**
                 The web application produces a series of contour plots that visually represent agreement rates as percentages on the x-axis and their corresponding measurement uncertainty values on the y-axis. 
                 Horizontal lines are added to indicate the minimum, desirable, and optimal APSs for measurement uncertainty, corresponding to different agreement levels. 
+
+                ##### **Disclaimer**
+                The APS Calculator is provided solely as a decision support tool for assisting users in setting analytical performance specifications based on indirect outcome. It is important to note that while the tool aims to provide valuable guidance, the ultimate responsibility for setting appropriate analytical performance specifications lies with the user.
+                The user should exercise caution and consider relevant regulations, scientific literature, and any other applicable guidelines when determining their analytical performance specifications. It is crucial to ensure compliance with privacy, responsibility, and safety standards specific to the user's jurisdiction and intended application.
+                While every effort has been made to ensure the accuracy and reliability of the APS Calculator, it is important to understand that no tool can guarantee absolute accuracy or address all possible scenarios. Therefore, users should use their professional judgment and seek additional expert advice when necessary.
+                The APS Calculator does not collect any personally identifiable information (PII) or sensitive data from users. However, it is recommended to exercise general caution when using any online application and take necessary precautions to protect your privacy and data security.
+                By using the APS Calculator, users acknowledge and agree that they assume all risks and responsibilities associated with its use. The creators, developers, and maintainers of the APS Calculator shall not be held liable for any direct or indirect damages or losses arising from its use.
+                It is advised to regularly review this disclaimer, as it may be updated to reflect any changes in regulations, best practices, or other relevant factors.
                 
                 """)
                 st.markdown('---')
