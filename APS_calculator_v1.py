@@ -27,16 +27,18 @@ with st.sidebar:
     @st.cache_data(experimental_allow_widgets=True)
     def process_file(file):
         # data of analyte selection
-        uploaded_file = pd.read_excel(file)
+        try:
+            uploaded_file = pd.read_excel(file)
+        except:
+            uploaded_file = pd.read_csv(file, sep=None)
         analyte_name_box = st.selectbox("**Select Analyte Name**", tuple(uploaded_file.columns))
         analyte_data = uploaded_file[analyte_name_box]
         analyte_data = analyte_data.dropna(axis=0).reset_index()
         analyte_data = analyte_data[analyte_name_box]
-
         return analyte_data, analyte_name_box
 
     # upload file
-    uploaded_file = st.file_uploader('#### **Upload your .xlsx (Excel) file:**')
+    uploaded_file = st.file_uploader('#### **Upload your .xlsx (Excel) or .csv file:**', type=['csv','xlsx'], accept_multiple_files=False)
 
     # column name (data) selection
     if uploaded_file is not None:
