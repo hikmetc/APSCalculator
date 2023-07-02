@@ -107,7 +107,7 @@ with st.sidebar:
     
  
 st.image('./images/APS_Calculator_v2.png')
-st.markdown('#### **:blue[A Data-Driven Tool for Setting Analytical Performance Specifications for Measurement Uncertainty Based on Specific Clinical Settings and Population Data]**')
+st.markdown('#### **:blue[A Data-Driven Tool for Setting Outcome-Based Analytical Performance Specifications for Measurement Uncertainty Using Specific Clinical Requirements and Population Data]**')
 st.markdown('---')
 # TABS
 tab1, tab2, tab3, tab4 = st.tabs(["📖 **Instructions**", "📊 **:green[Distribution of data]**", 
