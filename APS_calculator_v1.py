@@ -114,7 +114,6 @@ tab1, tab2, tab3, tab4 = st.tabs(["📖 **Instructions**", "📊 **:green[Distri
                                 "🚦 **:blue[APS based on overall agreement]**", "🚥 **:violet[APS based on sublevel aggreement]**"],)
 with tab1:
                 st.markdown("""
-                ### A Data-Driven Tool for Setting Outcome-Based Analytical Performance Specifications for Measurement Uncertainty Using Specific Clinical Requirements and Population Data    
                 This web application is designed to help laboratory professinals to determine 
                 their analytical performance specifications for measurement uncertainty based on their intended clinical setting and population of concern.
                 
