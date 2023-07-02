@@ -120,7 +120,7 @@ with tab1:
                 
                 #### Instructions
                 
-                1. Kindly, upload your data belonged to intended clinical setting and population of concern.
+                1. Upload your data.
                 Make sure that the first row of the Excel file you upload has analyte names and the other rows have analyte values, like the following example:
                 
                 | Glucose | LDL-cholesterol |
