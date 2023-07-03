@@ -115,7 +115,7 @@ st.markdown('---')
 tab1, tab2, tab3, tab4 = st.tabs(["📖 **Instructions**", "📊 **:green[Distribution of data]**", 
                                 "🚦 **:blue[APS based on overall agreement]**", "🚥 **:violet[APS based on sublevel aggreement]**"],)
 with tab1:
-    st.markdown("""
+                st.markdown("""
                 This web application is designed to help laboratory professinals to determine 
                 their analytical performance specifications for measurement uncertainty based on their intended clinical setting and population of concern.
                 
@@ -144,15 +144,15 @@ with tab1:
                 formula = """
                 Result_M = Result_O*[(1+ n(0,1))*MU]
                 """
-    st.latex(formula)       
+                st.latex(formula)       
                 definition_caption = """
                 ResultO: Original concentration of the measurand
                 ResultM: Measured (Simulated) concentration of an analyte
                 n(0,1): A random number generated with normal distribution (mean = 0, standard deviaiton = 1)\n
                 MU: Relative standard measurement uncertainty
                 """
-    st.caption(definition_caption)
-    st.markdown("""        
+                st.caption(definition_caption)
+                st.markdown("""        
                 
                 ##### **The simulation process was performed in three steps as follows:**
             
@@ -172,8 +172,8 @@ with tab1:
                 Horizontal lines are added to indicate the minimum, desirable, and optimal APSs for measurement uncertainty, corresponding to different agreement levels. 
 
                 """)
-    st.markdown('---')
-    st.markdown("""
+                st.markdown('---')
+                st.markdown("""
                 ##### **Disclaimer**
                 The APS Calculator is provided solely as a decision support tool for assisting users in setting analytical performance specifications based on indirect outcome. It is important to note that while the tool aims to provide valuable guidance, the ultimate responsibility for setting appropriate analytical performance specifications lies with the user.
                 The user should exercise caution and consider relevant regulations, scientific literature, and any other applicable guidelines when determining their analytical performance specifications. It is crucial to ensure compliance with privacy, responsibility, and safety standards specific to the user's jurisdiction and intended application.
@@ -184,7 +184,7 @@ with tab1:
                 The creators, developers, and maintainers of the APS Calculator shall not be held liable for any direct or indirect damages or losses arising from its use or resulting from the APS calculator's temporary or permanent unavailability.
                 It is advised to regularly review this disclaimer, as it may be updated to reflect any changes in regulations, best practices, or other relevant factors.
                 """)
-    st.markdown('---')
+                st.markdown('---')
      
 # table maker from list 
 def create_table(category_intervals):
