@@ -115,29 +115,6 @@ st.markdown('---')
 tab1, tab2, tab3, tab4 = st.tabs(["📖 **Instructions**", "📊 **:green[Distribution of data]**", 
                                 "🚦 **:blue[APS based on overall agreement]**", "🚥 **:violet[APS based on sublevel aggreement]**"],)
 with tab1:
-    content=""" Disclaimer:
-
-    The APS Calculator is provided solely as a decision support tool for assisting users in 
-    setting analytical performance specifications based on indirect outcome. 
-    It is important to note that while the tool aims to provide valuable guidance, 
-    the ultimate responsibility for setting appropriate analytical performance specifications lies with the user.
-    The user should exercise caution and consider relevant regulations, scientific literature, 
-    and any other applicable guidelines when determining their analytical performance specifications. 
-    It is crucial to ensure compliance with privacy, responsibility, and safety standards specific to the user's jurisdiction and intended application.
-    While every effort has been made to ensure the accuracy and reliability of the APS Calculator, 
-    it is important to understand that no tool can guarantee absolute accuracy or address all possible scenarios. 
-    Therefore, users should use their professional judgment and seek additional expert advice when necessary.
-    The APS Calculator does not collect any personally identifiable information (PII) or sensitive data from users. 
-    However, it is recommended to exercise general caution when using any online application and take necessary 
-    precautions to protect your privacy and data security. By using the APS Calculator, users acknowledge and 
-    agree that they assume all risks and responsibilities associated with its use. The continuous availability 
-    of the calculator cannot be guaranteed, as it may experience periods of unavailability due to various factors, 
-    including technical issues, maintenance, or unforeseen circumstances.The creators, developers, and maintainers 
-    of the APS Calculator shall not be held liable for any direct or indirect damages or losses arising from its use
-    or resulting from the APS calculator's temporary or permanent unavailability. It is advised to regularly 
-    review this disclaimer, as it may be updated to reflect any changes in regulations, best practices, or other relevant factors.
-            """
-    st.warning(content, icon="⚠️")
     st.markdown("""
                 This web application is designed to help laboratory professinals to determine 
                 their analytical performance specifications for measurement uncertainty based on their intended clinical setting and population of concern.
@@ -196,17 +173,29 @@ with tab1:
 
                 """)
     st.markdown('---')
-    st.markdown("""
-                ##### **Disclaimer**
-                The APS Calculator is provided solely as a decision support tool for assisting users in setting analytical performance specifications based on indirect outcome. It is important to note that while the tool aims to provide valuable guidance, the ultimate responsibility for setting appropriate analytical performance specifications lies with the user.
-                The user should exercise caution and consider relevant regulations, scientific literature, and any other applicable guidelines when determining their analytical performance specifications. It is crucial to ensure compliance with privacy, responsibility, and safety standards specific to the user's jurisdiction and intended application.
-                While every effort has been made to ensure the accuracy and reliability of the APS Calculator, it is important to understand that no tool can guarantee absolute accuracy or address all possible scenarios. Therefore, users should use their professional judgment and seek additional expert advice when necessary.
-                The APS Calculator does not collect any personally identifiable information (PII) or sensitive data from users. However, it is recommended to exercise general caution when using any online application and take necessary precautions to protect your privacy and data security.
-                By using the APS Calculator, users acknowledge and agree that they assume all risks and responsibilities associated with its use. 
-                The continuous availability of the calculator cannot be guaranteed, as it may experience periods of unavailability due to various factors, including technical issues, maintenance, or unforeseen circumstances.
-                The creators, developers, and maintainers of the APS Calculator shall not be held liable for any direct or indirect damages or losses arising from its use or resulting from the APS calculator's temporary or permanent unavailability.
-                It is advised to regularly review this disclaimer, as it may be updated to reflect any changes in regulations, best practices, or other relevant factors.
-                """)
+    content=""" Disclaimer:
+
+    The APS Calculator is provided solely as a decision support tool for assisting users in 
+    setting analytical performance specifications based on indirect outcome. 
+    It is important to note that while the tool aims to provide valuable guidance, 
+    the ultimate responsibility for setting appropriate analytical performance specifications lies with the user.
+    The user should exercise caution and consider relevant regulations, scientific literature, 
+    and any other applicable guidelines when determining their analytical performance specifications. 
+    It is crucial to ensure compliance with privacy, responsibility, and safety standards specific to the user's jurisdiction and intended application.
+    While every effort has been made to ensure the accuracy and reliability of the APS Calculator, 
+    it is important to understand that no tool can guarantee absolute accuracy or address all possible scenarios. 
+    Therefore, users should use their professional judgment and seek additional expert advice when necessary.
+    The APS Calculator does not collect any personally identifiable information (PII) or sensitive data from users. 
+    However, it is recommended to exercise general caution when using any online application and take necessary 
+    precautions to protect your privacy and data security. By using the APS Calculator, users acknowledge and 
+    agree that they assume all risks and responsibilities associated with its use. The continuous availability 
+    of the calculator cannot be guaranteed, as it may experience periods of unavailability due to various factors, 
+    including technical issues, maintenance, or unforeseen circumstances.The creators, developers, and maintainers 
+    of the APS Calculator shall not be held liable for any direct or indirect damages or losses arising from its use
+    or resulting from the APS calculator's temporary or permanent unavailability. It is advised to regularly 
+    review this disclaimer, as it may be updated to reflect any changes in regulations, best practices, or other relevant factors.
+            """
+    st.warning(content, icon="⚠️")
     st.markdown('---')
      
 # table maker from list 
