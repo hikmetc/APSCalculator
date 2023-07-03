@@ -407,8 +407,7 @@ if analyze_button:
                         x=data,
                         name=category,
                         opacity=0.7,
-                        autobinx=True,
-                        barmode="overlay",
+                        autobinx=True
                     ))
                 # Customize the layout of the figure
                 fig_h.update_layout(
