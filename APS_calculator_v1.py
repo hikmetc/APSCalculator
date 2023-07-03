@@ -397,7 +397,7 @@ if analyze_button:
                 st.markdown('##### **:green[Histogram of the original data]**')
                 # Get unique categories
                 categories_h = analyte_last_df['Analyte_category'].unique()
-                categories_h = sorted([cat for cat in categories_h if cat.startswith("<")], reverse=True) + sorted([cat for cat in categories_h if not cat.startswith("<")])
+                categories_h = sorted([cat for cat in categories_h if cat.startswith("<")]) + sorted([cat for cat in categories_h if not cat.startswith("<")], reverse=True)
                 # Create the histogram figure
                 fig_h = go.Figure()             
                 # Iterate over categories and add histogram traces
