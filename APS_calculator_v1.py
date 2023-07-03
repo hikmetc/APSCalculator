@@ -417,7 +417,7 @@ if analyze_button:
                         ),
                         tickfont=dict(
                             size=11
-                        ),
+                        ), autobinx=True
                     ),
                     yaxis=dict(
                         title='Count',
