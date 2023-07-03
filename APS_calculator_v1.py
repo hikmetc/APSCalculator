@@ -445,7 +445,7 @@ if analyze_button:
                         l=10
                     ),
                     height=500,
-                    width=800, barmode='stack'
+                    width=800, barmode='stack', bargap=0.001
                 )
                 # Show the figure using Streamlit
                 st.plotly_chart(fig_h, theme="streamlit", use_container_width=True)
