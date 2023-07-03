@@ -431,8 +431,10 @@ if analyze_button:
                     ),
                     legend=dict(
                         title='Category Intervals',
-                        x=0,
-                        y=1,
+                        xanchor='right',  # Position the legend on the right
+                        yanchor='top',  # Position the legend on the top
+                        x=0.98,  # Adjust the x position of the legend
+                        y=0.98,  # Adjust the y position of the legend
                         traceorder='normal',
                         font=dict(
                             size=11
