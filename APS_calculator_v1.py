@@ -407,6 +407,7 @@ if analyze_button:
                         x=data,
                         name=category,
                         opacity=0.7,
+                        nbinsx=30,
                         autobinx=True,
                     ))
                 # Customize the layout of the figure
