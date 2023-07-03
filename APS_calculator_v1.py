@@ -395,7 +395,7 @@ if analyze_button:
                 
                 st.write(" ")
                 st.markdown('##### **:green[Histogram of the original data]**')
-                                # Get unique categories
+                # Get unique categories
                 categories_h = analyte_last_df['Analyte_category'].unique()
                 categories_h = sorted([cat for cat in categories_h if cat.startswith("<")]) + sorted([cat for cat in categories_h if not cat.startswith("<")])
                 # Create the histogram figure
@@ -407,6 +407,7 @@ if analyze_button:
                         x=data,
                         name=category,
                         opacity=0.7,
+                        nbinsx='auto',
                     ))
                 # Customize the layout of the figure
                 fig_h.update_layout(
@@ -417,7 +418,7 @@ if analyze_button:
                         ),
                         tickfont=dict(
                             size=11
-                        ), autobinx=True
+                        ),
                     ),
                     yaxis=dict(
                         title='Count',
