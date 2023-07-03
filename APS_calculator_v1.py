@@ -395,16 +395,59 @@ if analyze_button:
                 
                 st.write(" ")
                 st.markdown('##### **:green[Histogram of the original data]**')
-                fig = plt.figure(figsize=(18, 8))
-                sns.histplot(data=analyte_last_df, x=column_name, kde=False, hue="Analyte_category",
-                                    discrete= False)
-                plt.xlim(analyte_last_df[column_name].quantile(.001), analyte_last_df[column_name].quantile(.999))
-                st.pyplot(fig)
-                st.markdown('##### **:green[Density plot of the original data]**')
-                fig2 = plt.figure(figsize=(18, 8))
-                sns.kdeplot(data=analyte_last_df, x=column_name, hue="Analyte_category", multiple="stack", alpha=.5,common_grid=True, fill=True, linewidth=0.1)
-                plt.xlim(analyte_last_df[column_name].quantile(.001), analyte_last_df[column_name].quantile(.999))
-                st.pyplot(fig2)
+                                # Get unique categories
+                categories_h = analyte_last_df['Analyte_category'].unique()
+                categories_h = sorted([cat for cat in categories_h if cat.startswith("<")]) + sorted([cat for cat in categories_h if not cat.startswith("<")])
+                # Create the histogram figure
+                fig_h = go.Figure()             
+                # Iterate over categories and add histogram traces
+                for i, category in enumerate(categories_h):
+                    data = analyte_last_df[analyte_last_df['Analyte_category'] == category][column_name]
+                    fig_h.add_trace(go.Histogram(
+                        x=data,
+                        name=category,
+                        opacity=0.7,
+                    ))
+                # Customize the layout of the figure
+                fig_h.update_layout(
+                    xaxis=dict(
+                        title=column_name,
+                        title_font=dict(
+                            size=12
+                        ),
+                        tickfont=dict(
+                            size=11
+                        ),
+                    ),
+                    yaxis=dict(
+                        title='Count',
+                        title_font=dict(
+                            size=12
+                        ),
+                        tickfont=dict(
+                            size=11
+                        )
+                    ),
+                    legend=dict(
+                        title='Category Intervals',
+                        x=0,
+                        y=1,
+                        traceorder='normal',
+                        font=dict(
+                            size=11
+                        )
+                    ),
+                    margin=dict(
+                        t=10,
+                        r=10,
+                        b=10,
+                        l=10
+                    ),
+                    height=500,
+                    width=800 #,bargap=0
+                )
+                # Show the figure using Streamlit
+                st.plotly_chart(fig_h, theme="streamlit", use_container_width=True)
             
             # ------------------------------------------------------------------------------------
             placeholder.success('**Simulation**', icon ="🔄")
