@@ -406,7 +406,7 @@ if analyze_button:
                     fig_h.add_trace(go.Histogram(
                         x=data,
                         name=category,
-                        opacity=0.7,marginal='rug',
+                        opacity=0.7,marginal='rug'
                     ))
                 # Customize the layout of the figure
                 fig_h.update_layout(
