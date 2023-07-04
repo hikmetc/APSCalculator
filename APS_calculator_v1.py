@@ -46,7 +46,9 @@ with st.sidebar:
         analyte_data, analyte_name_box = process_file(uploaded_file)
 
     #-----------------------------------------------------------------------
-    
+
+    # enter number of decimal places of data
+    number_of_decimals = st.number_input('**Enter Number of Decimal Places of The Selected Data**', min_value=0, max_value=12)
 
     #st.subheader('Enter Number of Clinical Decision Limit(s) Below')
     number_CDL = st.number_input('**Enter Number of Clinical Decision Limit(s) Below**', min_value=1, max_value=7)
@@ -99,7 +101,6 @@ with st.sidebar:
         des_agg_threshold = st.number_input('Desirable', value = 95)
     with c3:
         opt_agg_threshold = st.number_input('Optimal', value = 99) 
-    
         
     # Action button "Simulate & Calculate"
     analyze_button = st.button('**:green[Simulate & Calculate]**')
@@ -488,7 +489,7 @@ if analyze_button:
                 o_cat_n = list(o_cat_n)   
                 e_CVA=e # MU error
                 y_od = od + od*imprec_data_raw*e_CVA  # MU applied
-                nd = y_od 
+                nd = round(y_od, number_of_decimals) # round generated values according to number of decimals of the selected data entered by user
                 nd_cat= pd.cut(nd, bins, labels=names) # Categorization of the new data
                 nd_cat_n = nd_cat.replace(to_replace=names,
                 value=value, inplace=False)
