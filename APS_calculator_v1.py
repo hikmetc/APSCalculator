@@ -31,7 +31,7 @@ with st.sidebar:
             uploaded_file = pd.read_excel(file)
         except:
             uploaded_file = pd.read_csv(file, sep=None)
-        analyte_name_box = st.selectbox("**Select Analyte Name**", tuple(uploaded_file.columns))
+        analyte_name_box = st.selectbox("**Select Measurand Name**", tuple(uploaded_file.columns))
         analyte_data = uploaded_file[analyte_name_box]
         analyte_data = analyte_data.dropna(axis=0).reset_index()
         analyte_data = analyte_data[analyte_name_box]
@@ -131,8 +131,9 @@ with tab1:
                 | 120 | 120 |
                 | 90 | 100 |
                 | 170 | 110 |        
-                
-                2. Enter Number of Decimal Places of The Selected Data (e.g.,for 126 number of decimal places is 0, for 10.95 number of decimal places is 2 )
+
+                2. Select the measurand name.
+                2. Enter number of decimal places of the selected Data (e.g.,for 126 number of decimal places is 0, for 10.95 number of decimal places is 2 ).
                 3. Then, enter the number of clinical decision limits you want to include in the APS determination processs
                 4. Enter the value(s) of clinical decision limit(s)
                 5. Enter the aggreement thresholds that will be used to determine minimum, desirable and optimal analytical performance specifications.
