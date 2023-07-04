@@ -398,9 +398,34 @@ if analyze_button:
                 
                 st.write(" ")
                 st.markdown('##### **:green[Histogram of the original data]**')
+                
+                
+                # Get unique categories
+                #categories_h = analyte_last_df['Analyte_category'].unique()
+                #categories_h = sorted([cat for cat in categories_h if cat.startswith("<")]) + sorted([cat for cat in categories_h if not cat.startswith("<") and not cat.startswith("≥")], reverse=False) + sorted([cat for cat in categories_h if cat.startswith("≥")])
+
                 # Get unique categories
                 categories_h = analyte_last_df['Analyte_category'].unique()
-                categories_h = sorted([cat for cat in categories_h if cat.startswith("<")]) + sorted([cat for cat in categories_h if not cat.startswith("<") and not cat.startswith("≥")], reverse=False) + sorted([cat for cat in categories_h if cat.startswith("≥")])
+                
+                # Define sorting function to prioritize '<' and '≥' categories and sort others based on numbers before '-'
+                def custom_sort_key(cat):
+                    if cat.startswith("<"):
+                        return (0, cat)  # Sort '<' categories first
+                    elif cat.startswith("≥"):
+                        return (2, cat)  # Sort '≥' categories last
+                    else:
+                        num_part = cat.split('-')[0]  # Extract the numbers before '-'
+                        try:
+                            num = float(num_part)
+                            return (1, num)  # Sort other categories based on the extracted number
+                        except ValueError:
+                            return (1, cat)  # Sort categories without numbers as the original string
+                
+                # Sort the categories using the custom_sort_key function
+                categories_h = sorted(categories_h, key=custom_sort_key)
+
+                
+                
                 # Create the histogram figure
                 fig_h = go.Figure()             
                 # Iterate over categories and add histogram traces
