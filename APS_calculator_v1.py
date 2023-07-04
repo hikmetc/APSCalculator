@@ -132,10 +132,11 @@ with tab1:
                 | 90 | 100 |
                 | 170 | 110 |        
                 
-                2. Then, enter the number of clinical decision limits you want to include in the APS determination processs
-                3. Enter the value(s) of clinical decision limit(s)
-                4. Enter the aggreement thresholds that will be used to determine minimum, desirable and optimal analytical performance specifications.
-                5. Click on "Simulate & Analyze" button
+                2. Enter Number of Decimal Places of The Selected Data (e.g.,for 126 number of decimal places is 0, for 10.95 number of decimal places is 2 )
+                3. Then, enter the number of clinical decision limits you want to include in the APS determination processs
+                4. Enter the value(s) of clinical decision limit(s)
+                5. Enter the aggreement thresholds that will be used to determine minimum, desirable and optimal analytical performance specifications.
+                6. Click on "Simulate & Analyze" button
                 
                 #### Simulation & Calculation Process
                 
