@@ -398,11 +398,6 @@ if analyze_button:
                 
                 st.write(" ")
                 st.markdown('##### **:green[Histogram of the original data]**')
-                
-                
-                # Get unique categories
-                #categories_h = analyte_last_df['Analyte_category'].unique()
-                #categories_h = sorted([cat for cat in categories_h if cat.startswith("<")]) + sorted([cat for cat in categories_h if not cat.startswith("<") and not cat.startswith("≥")], reverse=False) + sorted([cat for cat in categories_h if cat.startswith("≥")])
 
                 # Get unique categories
                 categories_h = analyte_last_df['Analyte_category'].unique()
@@ -423,8 +418,6 @@ if analyze_button:
                 
                 # Sort the categories using the custom_sort_key function
                 categories_h = sorted(categories_h, key=custom_sort_key)
-
-                
                 
                 # Create the histogram figure
                 fig_h = go.Figure()             
