@@ -1103,7 +1103,7 @@ if analyze_button:
                     if ylim_v4 == 0:
                         ylim_v4 = "NO"
                         na_quote_4 = "NO: Not obtainable"
-                    col33..write(" ")
+                    col33.write(" ")
                     col33.markdown(f"""
                                 | APS level | MU |
                                 | ----------- | ----------- |
