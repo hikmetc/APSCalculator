@@ -123,7 +123,7 @@ with tab1:
                 #### Instructions
                 
                 1. Upload your data.
-                Make sure that the first row of the Excel file you upload has analyte names and the other rows have analyte values, like the following example:
+                Make sure that the first row of the Excel file you upload has measurand names and the other rows have analyte values, like the following example:
                 
                 | Glucose | LDL-cholesterol |
                 | ----------- | ----------- |
