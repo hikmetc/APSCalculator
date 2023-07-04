@@ -395,6 +395,7 @@ if analyze_button:
                 col1.write(" ")
                 col1.info('Revise your clinical decision limits if the category intervals are not appropriate', icon = "ℹ️")
                 col1.info('Make sure you have entered the number of decimal places of the selected data correctly', icon = "ℹ️")
+                col2.write(" ")
                 col2.write(create_table(names))
                 
                 st.write(" ")
