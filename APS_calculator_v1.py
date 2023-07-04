@@ -345,32 +345,32 @@ if analyze_button:
 
             elif number_CDL == 2: # MODIFED
                 bins = [0, cdl_1-0.000001, cdl_2, np.inf]
-                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}' ,f'≥{check_number(add_one(cdl_2))}']
+                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}' ,f'>{check_number(cdl_2)}']
                 value = [1, 2, 3]
 
             elif number_CDL == 3:
                 bins = [0, cdl_1-0.000001, cdl_2, cdl_3, np.inf]
-                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'≥{check_number(add_one(cdl_3))}']
+                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'>{check_number(cdl_3)}']
                 value = [1, 2, 3, 4]
 
             elif number_CDL == 4:
                 bins = [0, cdl_1-0.000001, cdl_2, cdl_3, cdl_4, np.inf]
-                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'{check_number(add_one(cdl_3))}-{check_number(cdl_4)}',f'≥{check_number(add_one(cdl_4))}']
+                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'{check_number(add_one(cdl_3))}-{check_number(cdl_4)}',f'>{check_number(cdl_4)}']
                 value = [1, 2, 3, 4, 5]
 
             elif number_CDL == 5:
                 bins = [0, cdl_1-0.000001, cdl_2, cdl_3, cdl_4, cdl_5, np.inf]
-                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'{check_number(add_one(cdl_3))}-{check_number(cdl_4)}',f'{check_number(add_one(cdl_4))}-{check_number(cdl_5)}',f'≥{check_number(add_one(cdl_5))}']
+                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'{check_number(add_one(cdl_3))}-{check_number(cdl_4)}',f'{check_number(add_one(cdl_4))}-{check_number(cdl_5)}',f'>{check_number(cdl_5)}']
                 value = [1, 2, 3, 4, 5, 6]
 
             elif number_CDL == 6:
                 bins = [0, cdl_1-0.000001, cdl_2, cdl_3, cdl_4, cdl_5, cdl_6, np.inf]
-                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'{check_number(add_one(cdl_3))}-{check_number(cdl_4)}',f'{check_number(add_one(cdl_4))}-{check_number(cdl_5)}',f'{check_number(add_one(cdl_5))}-{check_number(cdl_6)}',f'≥{check_number(add_one(cdl_6))}']
+                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'{check_number(add_one(cdl_3))}-{check_number(cdl_4)}',f'{check_number(add_one(cdl_4))}-{check_number(cdl_5)}',f'{check_number(add_one(cdl_5))}-{check_number(cdl_6)}',f'>{check_number(cdl_6)}']
                 value = [1, 2, 3, 4, 5, 6, 7]
 
             elif number_CDL == 7:
                 bins = [0, cdl_1-0.000001, cdl_2, cdl_3, cdl_4, cdl_5, cdl_6, cdl_7, np.inf]
-                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'{check_number(add_one(cdl_3))}-{check_number(cdl_4)}',f'{check_number(add_one(cdl_4))}-{check_number(cdl_5)}',f'{check_number(add_one(cdl_5))}-{check_number(cdl_6)}',f'{check_number(add_one(cdl_6))}-{check_number(cdl_7)}',f'≥{check_number(add_one(cdl_7))}']
+                names = [f'<{check_number(cdl_1)}', f'{check_number(cdl_1)}-{check_number(cdl_2)}', f'{check_number(add_one(cdl_2))}-{check_number(cdl_3)}' ,f'{check_number(add_one(cdl_3))}-{check_number(cdl_4)}',f'{check_number(add_one(cdl_4))}-{check_number(cdl_5)}',f'{check_number(add_one(cdl_5))}-{check_number(cdl_6)}',f'{check_number(add_one(cdl_6))}-{check_number(cdl_7)}',f'>{check_number(cdl_7)}']
                 value = [1, 2, 3, 4, 5, 6, 7, 8]
                 
             else:
@@ -404,12 +404,12 @@ if analyze_button:
                 # Get unique categories
                 categories_h = analyte_last_df['Analyte_category'].unique()
                 
-                # Define sorting function to prioritize '<' and '≥' categories and sort others based on numbers before '-'
+                # Define sorting function to prioritize '<' and '>' categories and sort others based on numbers before '-'
                 def custom_sort_key(cat):
                     if cat.startswith("<"):
                         return (0, cat)  # Sort '<' categories first
-                    elif cat.startswith("≥"):
-                        return (2, cat)  # Sort '≥' categories last
+                    elif cat.startswith(">"):
+                        return (2, cat)  # Sort '>' categories last
                     else:
                         num_part = cat.split('-')[0]  # Extract the numbers before '-'
                         try:
