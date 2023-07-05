@@ -145,7 +145,7 @@ with tab1:
                 The application then simulates "measured" values by introducing measurement uncertainty into the actual concentration of the analyte, using the following formula: 
                 """)
     formula = """
-                Result_M = Result_O*[(1+ n(0,1))*MU]
+                Result_M = Result_O*[1+ n(0,1)*MU]
                 """
     st.latex(formula)       
     definition_caption = """
