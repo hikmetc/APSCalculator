@@ -28,10 +28,10 @@ with st.sidebar:
     def process_file(file):
         # data of analyte selection
         try:
-            uploaded_file = pd.read_excel(file) 
+            uploaded_file = pd.read_excel(file)
         except:
-            uploaded_file = pd.read_csv(file, sep=None, engine='python') 
-        analyte_name_box = st.selectbox("**Select Measurand Name**", tuple(uploaded_file.columns))
+            uploaded_file = pd.read_csv(file, sep=None)
+        analyte_name_box = st.selectbox("**Select Analyte Name**", tuple(uploaded_file.columns))
         analyte_data = uploaded_file[analyte_name_box]
         analyte_data = analyte_data.dropna(axis=0).reset_index()
         analyte_data = analyte_data[analyte_name_box]
