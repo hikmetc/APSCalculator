@@ -841,7 +841,7 @@ if analyze_button:
                 st.markdown("---")
             
             with tab4:
-                st.write('##### **:blue[APS for based on sublevel aggreement]**')
+                st.write('##### **:blue[APS for MU based on sublevel aggreement]**')
                 st.write('  ')
                 for i in names:     
                     st.markdown(f'###### **:blue[APS based on sublevel: {i}]**')
