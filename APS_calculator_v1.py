@@ -150,8 +150,11 @@ with tab1:
     st.latex(formula)       
     definition_caption = """
                 ResultO: Original concentration of the measurand
+                
                 ResultM: Measured (Simulated) concentration of an analyte
+                
                 n(0,1): A random number generated with normal distribution (mean = 0, standard deviaiton = 1)\n
+                
                 MU: Relative standard measurement uncertainty
                 """
     st.caption(definition_caption)
