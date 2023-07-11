@@ -145,14 +145,14 @@ with tab1:
                 The application then simulates "measured" values by introducing measurement uncertainty into the actual concentration of the analyte, using the following formula: 
                 """)
     formula = """
-                Result_M = Result_O*[1+ n(0,1)*MU]
+                Result_M = Result_O*[1+ n(0,1)*u_rel]
                 """
     st.latex(formula)       
     definition_caption = """
                 ResultO: Original concentration of the measurand
                 ResultM: Measured (Simulated) concentration of an analyte
                 n(0,1): A random number generated with normal distribution (mean = 0, standard deviaiton = 1)\n
-                MU: Relative standard measurement uncertainty
+                u_rel: Relative standard measurement uncertainty
                 """
     st.caption(definition_caption)
     st.markdown("""        
