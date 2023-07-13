@@ -118,7 +118,7 @@ tab1, tab2, tab3, tab4 = st.tabs(["📖 **Instructions**", "📊 **:green[Distri
 with tab1:
     st.markdown("""
                 This web application is designed to help laboratory professinals to determine 
-                their analytical performance specifications for measurement uncertainty based on their intended clinical setting and population of concern.
+                their analytical performance specifications for relative standard measurement uncertainty based on their intended clinical setting and population of concern.
                 
                 #### Instructions
                 
