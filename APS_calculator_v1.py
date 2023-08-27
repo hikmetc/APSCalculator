@@ -137,7 +137,7 @@ with tab1:
                 | 170 | 110 |        
 
                 2. Select the measurand name.
-                3. Enter relative standard Mmeasurement uncertainty (urel) of the selected data.
+                3. Enter relative standard measurement uncertainty (urel) of the selected data.
                 4. Enter number of decimal places of the selected data (e.g., for 126, number of decimal places is 0; for 10.95, number of decimal places is 2).
                 5. Enter the number of clinical decision limits you want to include in the APS determination processs
                 6. Enter the value(s) of clinical decision limit(s)
