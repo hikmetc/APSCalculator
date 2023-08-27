@@ -148,7 +148,7 @@ with tab1:
                 6. Enter the value(s) of clinical decision limit(s) 
                 (e.g., for glucose example in the template.xlsx file, CDLs are 100 mg/dL and 126 mg/dL) 
                 
-                - Note: Please check the final category intervals on the "Distribution of data" page. 
+                **Note:** Please check the final category intervals on the "Distribution of data" page. 
                 
                 When more then one CDL is entered, the highest CDL the user entered is considered within the lower category (Categories would be <1stCDL, 1stCDL-2ndCDL, >2ndCDL). 
                 For glucose example, when the 2nd CDL is entered as "125", the number 125 is included in the 100-125 interval, 
