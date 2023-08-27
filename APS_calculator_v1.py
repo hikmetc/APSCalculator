@@ -149,9 +149,10 @@ with tab1:
                 (e.g., for glucose example in the template.xlsx file, CDLs are 100 mg/dL and 126 mg/dL) 
                 
                 - Note: Please check the final category intervals on the "Distribution of data" page. 
-                The highest CDL the user entered is considered within the lower category. 
+                When more then one CDL is entered, the highest CDL the user entered is considered within the lower category (Categories would be <1stCDL, 1stCDL-2ndCDL, >2ndCDL). 
                 For glucose example, when the 2nd CDL is entered as "125", the number 125 is included in the 100-125 interval, 
-                while 126 is considered within the interval of >125 (similar to ≥126))
+                while 126 is considered within the interval of >125 (similar to ≥126) 
+                When one CDL is entered by user, the CDL is considered within the higher category (Categories would be <CDL, ≥CDL).
                 
                 7. Enter the agreement thresholds that will be used to determine minimum, desirable, and optimal analytical performance specifications.
                 8. Click on the "Simulate & Analyze" button.
