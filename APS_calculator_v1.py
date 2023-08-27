@@ -1199,22 +1199,22 @@ if analyze_button:
             placeholder.empty()
             
     except IndexError as error:
-        print("NameError occurred:", error)
-        st.write(error)
+        #print("NameError occurred:", error)
+        #st.write(error)
         st.error('The number of measurand results belonging to a particular category may be too low for determination of APS for MU. Please check your clinical decision limits or upload a larger data set.', icon="❗")   
     except NameError as error:
-        print("NameError occurred:", error)
-        st.write(error)
+        #print("NameError occurred:", error)
+        #st.write(error)
         st.error('Please upload your file')
     except ValueError as error:
-        print("ValueError occurred:", error)
-        st.write(error)
+        #print("ValueError occurred:", error)
+        #st.write(error)
         st.error('Inappropriate clinical decision limit was entered.', icon="❗")
     except TypeError as error:
-        st.write(error)
+        #st.write(error)
         st.error('Your data includes non-numerical types of entry. Please check your data.', icon="❗")
     except Exception as error:
-        print("An exception occurred:", error)
-        st.write(error)
+        #print("An exception occurred:", error)
+        #st.write(error)
         st.info('Upload your file and follow the instructions to calculate APS', icon = "📁")
         
