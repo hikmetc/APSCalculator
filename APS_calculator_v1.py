@@ -129,12 +129,12 @@ with tab1:
                 1. Upload your data.
                 Make sure that the first row of the Excel file you upload has measurand names and the other rows have analyte values, like the following example:
                 
-                | Glucose | LDL-cholesterol |
-                | ----------- | ----------- |
-                | 100 | 90 |
-                | 120 | 120 |
-                | 90 | 100 |
-                | 170 | 110 |        
+                  | Glucose | LDL-cholesterol |
+                  | ----------- | ----------- |
+                  | 100 | 90 |
+                  | 120 | 120 |
+                  | 90 | 100 |
+                  | 170 | 110 |        
 
                 2. Select the measurand name.
                 3. Enter relative standard measurement uncertainty (urel) of the selected data.
