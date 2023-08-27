@@ -146,8 +146,8 @@ with tab1:
                 
                 #### Simulation & Calculation Process
                 
-                During the simulation process, laboratory results uploaded into the application are assumed to represent the "true" values. 
-                The application then simulates "measured" values by introducing measurement uncertainty into the actual concentration of the analyte, using the following formula: 
+                APS Calculator firstly eliminates the effect of known MU (entered by the user) belonging to the uploaded (original) laboratory data, 
+                which is followed by simulation of “measured” values by introducing MU into the MU-eliminated data, using the following formula: 
                 """)
     formula = """
                 Result_M = Result_O*[1+ n(0,1)*MU]
