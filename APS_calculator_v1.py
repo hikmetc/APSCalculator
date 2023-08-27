@@ -1208,6 +1208,9 @@ if analyze_button:
     except ValueError as error:
         print("ValueError occurred:", error) 
         st.error('Inappropriate clinical decision limit was entered.', icon="❗")
+    except TypeError as error:
+        st.write(error)
+        st.error('Your data includes non-numerical types of entry. Please check your data.', icon="❗")
     except Exception as error:
         print("An exception occurred:", error)
         st.write(error)
