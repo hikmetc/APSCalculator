@@ -180,7 +180,7 @@ with tab1:
                 
                 ##### **Calculation Process**
                 
-                Aggreement level between original concentration and measured (simulated) concentration of the analyte were calculated. 
+                The overall agreement between the ResultV and ResultSM categories and the sublevel agreement based on the clinical decision limits are calculated for each u_rel(simulated) rate along with sensitivity and specificity values.
                 Minimum, desirable, and optimal analytical performance specifications were determined according to the aggreement thresholds that entered previously.
                 
                 ##### **Contour Plots**
