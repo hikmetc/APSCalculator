@@ -153,7 +153,7 @@ with tab1:
                 Result_M = Result_O*[1+ n(0,1)*MU]
                 """
     st.latex(formula) 
-    st.image('./image/equation_4.png')
+    st.image('./images/equation_4.png')
     definition_caption = """
                 ResultO: Original concentration of the measurand
                 
