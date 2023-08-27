@@ -152,10 +152,15 @@ with tab1:
     st.image('./images/equation_4.png')
     definition_caption = """
                 Result_V: Value of a measurand.
+                
                 Result_FM: First measured concentration of a measurand (Initial estimate of the value of a measurand)
+                
                 Result_SM: Measured concentration of a measurand via simulation.
-                u_rel(known): Relative standard MU (expressed in percentage units) [15] of uploaded (original) data.
+                
+                u_rel(known): Relative standard MU (expressed in percentage units) of uploaded (original) data.
+                
                 u_rel(simulated): Relative standard MU (expressed in percentage units) of simulated measurement.
+                
                 n(0,1): A pseudo-random number generated with a Gaussian distribution having a mean of 0 and a standard deviation of 1.
                 """
     st.caption(definition_caption)
