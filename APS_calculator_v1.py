@@ -1201,7 +1201,7 @@ if analyze_button:
     except IndexError as error:
         print("NameError occurred:", error)
         st.write(error)
-        st.error('Check your clinical decision limits')   
+        st.error('The number of measurand results are too low for determination of APS for MU. You may check your clinical decision limits or upload larger data set.')   
     except NameError as error:
         print("NameError occurred:", error)
         st.error('Please upload your file')
