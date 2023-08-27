@@ -157,7 +157,7 @@ with tab1:
                 
                 Result_SM: Measured concentration of a measurand via simulation.
                 
-                u_rel(known): Relative standard MU (expressed in percentage units) of uploaded (original) data.
+                u_rel(known): Relative standard MU (expressed in percentage units) of uploaded (original) data entered by user.
                 
                 u_rel(simulated): Relative standard MU (expressed in percentage units) of simulated measurement.
                 
