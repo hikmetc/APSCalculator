@@ -1206,5 +1206,6 @@ if analyze_button:
         st.error('Inappropriate clinical decision limit was entered.', icon="❗")
     except Exception as error:
         print("An exception occurred:", error)
+        st.write(error)
         st.info('Upload your file and follow the instructions to calculate APS', icon = "📁")
         
