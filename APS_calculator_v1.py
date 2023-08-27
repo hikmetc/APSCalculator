@@ -180,7 +180,7 @@ with tab1:
                 
                 ##### **Calculation Process**
                 
-                The overall agreement between the ResultV and ResultSM categories and the sublevel agreement based on the clinical decision limits are calculated for each u_rel(simulated) rate along with sensitivity and specificity values.
+                The overall agreement between the Result_V and Result_SM categories and the sublevel agreement based on the clinical decision limits are calculated for each u_rel(simulated) rate along with sensitivity and specificity values.
                 Minimum, desirable, and optimal analytical performance specifications were determined according to the aggreement thresholds that entered previously.
                 
                 ##### **Contour Plots**
