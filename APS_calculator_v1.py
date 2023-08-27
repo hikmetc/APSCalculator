@@ -61,7 +61,7 @@ with st.sidebar:
     if number_CDL == 1:
         cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f", key=1)
     elif number_CDL == 2:
-        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=2)
+        cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below (from lowest to largest):** Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=2)
         cdl_2 = st.number_input(label=" ",label_visibility='collapsed',min_value=0.00000 ,format="%.f", key=3)
     elif number_CDL == 3:
         cdl_1 = st.number_input(label='**Enter Clinical Decision Limit(s) Below:** Please check final category intervals on "Distribution of data" page',min_value=0.00000 ,format="%.f",key=4)
