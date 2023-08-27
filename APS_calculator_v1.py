@@ -149,6 +149,7 @@ with tab1:
                 APS Calculator firstly eliminates the effect of known MU (entered by the user) belonging to the uploaded (original) laboratory data, 
                 which is followed by simulation of “measured” values by introducing MU into the MU-eliminated data, using the following formula: 
                 """) 
+    st.image('./images/equation_2.png')
     st.image('./images/equation_4.png')
     definition_caption = """
                 Result_V: Value of a measurand.
