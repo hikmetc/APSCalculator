@@ -2,6 +2,7 @@
 
 import streamlit as st
 st.set_page_config(layout="wide")
+import statistics
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -46,7 +47,10 @@ with st.sidebar:
         analyte_data, analyte_name_box = process_file(uploaded_file)
 
     #-----------------------------------------------------------------------
-
+    # Enter Relative Standard Measurement Uncertainty (urel) of The Selected Data
+    urel_of_original_data = st.number_input('**Enter Relative Standard Measurement Uncertainty (urel) of The Selected Data**', min_value=0.00000, max_value=33.00000, format="%.f")
+    urel_of_original_data = float(urel_of_original_data/100)
+    
     # enter number of decimal places of data
     number_of_decimals = st.number_input('**Enter Number of Decimal Places of The Selected Data**', min_value=0, max_value=12)
 
@@ -485,7 +489,7 @@ if analyze_button:
             ### Selection of original data and original data category
             od = analyte_last_df[column_name] # original data
             o_cat_n = analyte_last_df['cat_n'] # original data category
-                        
+                                    
             error_l = [] # MU list
 
             accuracy_overall_l = [] # accuracy overall list , agreement
@@ -497,49 +501,121 @@ if analyze_button:
             specificity_overall_l = [] # specificity overall list
             sub_specificity_l = [] # sub_specificity score (sub group specificity)
 
-
-            sensitivity_recall_l = [] # sensitivity score list , agreement
-            specificity_l = [] # specificity score list , agreement
-
             n_data = len(od) # sample size
-            np.random.seed(2) # seed for reproducible results
-            imprec_data_raw = np.random.normal(0, 1, n_data)
-            imprec_data_raw = pd.Series(imprec_data_raw)
-   
+                        
+            def calculate_mean_lol(list_of_lists):
+                # returns mean of every corresponding indexes of sublists
+                list_of_lists = list(map(list, zip(*list_of_lists))) # transpose data
+                num_elements = len(list_of_lists[0])
+                mean = []
+                for i in range(num_elements):
+                    column_data = [sublist[i] for sublist in list_of_lists]
+                    mean.append(statistics.mean(column_data))
+                return mean  
+
+            def calculate_submetrics_means(data):
+                # returns mean of columns of 10x2 data
+                num_columns = len(data[0])  # Assuming all sublists have the same length
+                column_means = []
+
+                for i in range(num_columns):
+                    column_data = [row[i] for row in data]
+                    column_mean = sum(column_data) / len(column_data)
+                    column_means.append(column_mean)
+
+                return column_means   
+                       
             # MU simulation
             ### MU simulation
             for e in np.arange(0,0.332,0.001): # CV constant
+                
+                error_ll = [] # MU list
+
+                accuracy_overall_ll = [] # accuracy overall list , agreement
+                sub_accuracy_score_ll = [] # sub_accuracy score (sub group accuracy)
+
+                sensitivity_overall_ll = [] # sensitivity overall list
+                sub_sensitivity_ll = [] # sub_sensitivity score (sub group sensitivity)
+
+                specificity_overall_ll = [] # specificity overall list
+                sub_specificity_ll = [] # sub_specificity score (sub group specificity)
+                
+                # simulation of 10 different random seed functions
+                for s in np.arange(1, 11, 1):          
+                    np.random.seed(s) # seed for reproducible results for simulated mu
+                    imprec_data_raw = np.random.normal(0, 1, n_data)
+                    imprec_data_raw = pd.Series(imprec_data_raw)
+                    
+                    np.random.seed(s+1234) # seed for reproducible results for orginal data MU cleaning
+                    imprec_data_raw_2 = np.random.normal(0, 1, n_data)
+                    imprec_data_raw_2 = pd.Series(imprec_data_raw_2)
                                 
-                n_cat_n = []
-                o_cat_n = list(o_cat_n)   
-                e_CVA=e # MU error
-                y_od = od + od*imprec_data_raw*e_CVA  # MU applied
-                nd = round(y_od, number_of_decimals) # round generated values according to number of decimals of the selected data entered by user
-                nd_cat= pd.cut(nd, bins, labels=names) # Categorization of the new data
-                nd_cat_n = nd_cat.replace(to_replace=names,
-                value=value, inplace=False)
-                n_cat_n.append(nd_cat_n)
-                n_cat_n = [item for sublist in n_cat_n for item in sublist]
-                n_cat_n = pd.Series(n_cat_n)
-                n_cat_n = n_cat_n.fillna(1)
-                error_l.append(e) # MU rate save
+                    n_cat_n = []
+                    o_cat_n = list(o_cat_n)
+                    result_t1_cat_n = []
+                       
+                    urel_sim = e # simulated urel
+                    urel_known = urel_of_original_data # urel of original data was assigned as urel_known
+                    result_t1 = (od/(1 + imprec_data_raw_2 * urel_known))
+                    y_od = result_t1 * (1 + imprec_data_raw * urel_sim)  # urel_of_original_data (as a fraction) was used then urel_sim applied  
+                    
+                    nd = round(y_od, number_of_decimals) # round generated values according to number of decimals of the selected data entered by user
+                    nd_cat= pd.cut(nd, bins, labels=names) # Categorization of the new data
+                    nd_cat_n = nd_cat.replace(to_replace=names,
+                    value=value, inplace=False)
+                    n_cat_n.append(nd_cat_n)
+                    n_cat_n = [item for sublist in n_cat_n for item in sublist]
+                    n_cat_n = pd.Series(n_cat_n)
+                    n_cat_n = n_cat_n.fillna(1)
+                    
+                    # urel cleaned original data
+                    result_t1 = round(result_t1, number_of_decimals) # round MU cleaned values according to number of decimals of the selected data entered by user
+                    result_t1_cat= pd.cut(result_t1, bins, labels=names) # Categorization of the new data
+                    result_t1_cat_n_value = result_t1_cat.replace(to_replace=names,value=value, inplace=False)
+                    result_t1_cat_n.append(result_t1_cat_n_value)
+                    result_t1_cat_n = [item for sublist in result_t1_cat_n for item in sublist]
+                    result_t1_cat_n = pd.Series(result_t1_cat_n)
+                    result_t1_cat_n = result_t1_cat_n.fillna(1)
+                    
+                    error_ll.append(e) # MU rate save
+                                
+                    matrix = confusion_matrix(result_t1_cat_n, n_cat_n) # establishing confusion matrix
+                                
+                    accuracy_overall_ll.append(calculate_micro_overall_accuracy(matrix)) # overall accuracy save to list
+                    sensitivity_overall_ll.append(calculate_micro_overall_sensitivity(matrix)) # overall sensitivity save to list
+                    specificity_overall_ll.append(calculate_micro_overall_specificity(matrix)) # overall specificity save to list
+                                
+                    sub_accuracy_score_lll = []
+                    sub_sensitivity_lll = []
+                    sub_specificity_lll = []
+                    for i in range (0, len(names)):
+                        sub_accuracy_score_lll.append(subclass_accuracy(matrix, i)) # subclass accuracy save to list
+                        sub_sensitivity_lll.append(subclass_sensitivity(matrix, i)) # subclass sensitivity save to list
+                        sub_specificity_lll.append(subclass_specificity(matrix, i)) # subclass specificity save to list
+                    sub_accuracy_score_ll.append(sub_accuracy_score_lll)
+                    sub_sensitivity_ll.append(sub_sensitivity_lll)
+                    sub_specificity_ll.append(sub_specificity_lll)
                 
-                matrix = confusion_matrix(o_cat_n, n_cat_n) # establishing confusion matrix
+                # mean of 10s of sub metrics simulation
+                sub_accuracy_score_ll = calculate_submetrics_means(sub_accuracy_score_ll)
+                sub_sensitivity_ll = calculate_submetrics_means(sub_sensitivity_ll)
+                sub_specificity_ll = calculate_submetrics_means(sub_specificity_ll)
                 
-                accuracy_overall_l.append(calculate_micro_overall_accuracy(matrix)) # overall accuracy save to list
-                sensitivity_overall_l.append(calculate_micro_overall_sensitivity(matrix)) # overall sensitivity save to list
-                specificity_overall_l.append(calculate_micro_overall_specificity(matrix)) # overall specificity save to list
-                
-                sub_accuracy_score_ll = []
-                sub_sensitivity_ll = []
-                sub_specificity_ll = []
-                for i in range (0, len(names)):
-                    sub_accuracy_score_ll.append(subclass_accuracy(matrix, i)) # subclass accuracy save to list
-                    sub_sensitivity_ll.append(subclass_sensitivity(matrix, i)) # subclass sensitivity save to list
-                    sub_specificity_ll.append(subclass_specificity(matrix, i)) # subclass specificity save to list
+                error_l.append(error_ll) # MU save to list
+                # metrics append to lists
+                accuracy_overall_l.append(accuracy_overall_ll)
                 sub_accuracy_score_l.append(sub_accuracy_score_ll)
+                
+                sensitivity_overall_l.append(sensitivity_overall_ll)
                 sub_sensitivity_l.append(sub_sensitivity_ll)
+
+                specificity_overall_l.append(specificity_overall_ll)
                 sub_specificity_l.append(sub_specificity_ll)
+                
+            error_l = calculate_mean_lol(error_l)
+            accuracy_overall_l = calculate_mean_lol(accuracy_overall_l)
+            sensitivity_overall_l = calculate_mean_lol(sensitivity_overall_l)
+            specificity_overall_l = calculate_mean_lol(specificity_overall_l)
 
             ### Accuracy table
             # sub_accuracy score data frame
@@ -672,7 +748,6 @@ if analyze_button:
                     name='Agreement',
                     hovertemplate='Agreement: %{x}%<br>Measurement Uncertainty: %{y}%<br>'
                 ))
-
 
                 # Add the horizontal lines for percentile agreement thresholds
                 fig.add_shape(
@@ -1122,10 +1197,13 @@ if analyze_button:
             time.sleep(2)
             placeholder.empty()
        
-    except NameError:
+    except NameError as error:
+        print("NameError occurred:", error)
         st.error('Please upload your file')
-    except ValueError: 
+    except ValueError as error:
+        print("ValueError occurred:", error) 
         st.error('Inappropriate clinical decision limit was entered.', icon="❗")
-else:
-    st.info('Upload your file and follow the instructions to calculate APS', icon = "📁")
+    except Exception as error:
+        print("An exception occurred:", error)
+        st.info('Upload your file and follow the instructions to calculate APS', icon = "📁")
         
