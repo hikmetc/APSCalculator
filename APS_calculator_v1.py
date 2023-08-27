@@ -1197,7 +1197,11 @@ if analyze_button:
             placeholder.success('**Done**', icon="✅")
             time.sleep(2)
             placeholder.empty()
-       
+            
+    except IndexError as error:
+        print("NameError occurred:", error)
+        st.write(error)
+        st.error('Check your clinical decision limits')   
     except NameError as error:
         print("NameError occurred:", error)
         st.error('Please upload your file')
