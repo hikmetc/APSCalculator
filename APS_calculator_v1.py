@@ -147,10 +147,12 @@ with tab1:
                 (e.g. for glucose example in the template.xlsx file, there are two CDLs (100 mg/dL and 126 mg/dL))
                 6. Enter the value(s) of clinical decision limit(s) 
                 (e.g. for glucose example in the template.xlsx file, CDLs are 100 mg/dL and 126 mg/dL, 
+                
                 Note: Please check final category intervals on "Distribution of data" page. 
                 The highest CDL that user entered, is considered within the lower category.
                 For glucose example, when 2nd CDL is entered as "125", the number 125 included in 100-125 interval, 
                 while 126 is considered within the interval of >125 (similar to ≥126))
+                
                 7. Enter the aggreement thresholds that will be used to determine minimum, desirable and optimal analytical performance specifications.
                 8. Click on "Simulate & Analyze" button
                 
