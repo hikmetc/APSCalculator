@@ -1206,7 +1206,8 @@ if analyze_button:
         print("NameError occurred:", error)
         st.error('Please upload your file')
     except ValueError as error:
-        print("ValueError occurred:", error) 
+        print("ValueError occurred:", error)
+        st.write(error)
         st.error('Inappropriate clinical decision limit was entered.', icon="❗")
     except TypeError as error:
         st.write(error)
