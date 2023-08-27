@@ -148,20 +148,15 @@ with tab1:
                 
                 APS Calculator firstly eliminates the effect of known MU (entered by the user) belonging to the uploaded (original) laboratory data, 
                 which is followed by simulation of “measured” values by introducing MU into the MU-eliminated data, using the following formula: 
-                """)
-    formula = """
-                Result_M = Result_O*[1+ n(0,1)*MU]
-                """
-    st.latex(formula) 
+                """) 
     st.image('./images/equation_4.png')
     definition_caption = """
-                ResultO: Original concentration of the measurand
-                
-                ResultM: Measured (Simulated) concentration of an analyte
-                
-                n(0,1): A random number generated with normal distribution (mean = 0, standard deviaiton = 1)\n
-                
-                MU: Relative standard measurement uncertainty
+                Result_V: Value of a measurand.
+                Result_FM: First measured concentration of a measurand (Initial estimate of the value of a measurand)
+                Result_SM: Measured concentration of a measurand via simulation.
+                u_rel(known): Relative standard MU (expressed in percentage units) [15] of uploaded (original) data.
+                u_rel(simulated): Relative standard MU (expressed in percentage units) of simulated measurement.
+                n(0,1): A pseudo-random number generated with a Gaussian distribution having a mean of 0 and a standard deviation of 1.
                 """
     st.caption(definition_caption)
     st.markdown("""        
