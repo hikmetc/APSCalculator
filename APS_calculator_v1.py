@@ -1204,6 +1204,7 @@ if analyze_button:
         st.error('The number of measurand results belonging to a particular category may be too low for determination of APS for MU. Please check your clinical decision limits or upload a larger data set.', icon="❗")   
     except NameError as error:
         print("NameError occurred:", error)
+        st.write(error)
         st.error('Please upload your file')
     except ValueError as error:
         print("ValueError occurred:", error)
