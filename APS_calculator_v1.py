@@ -152,11 +152,11 @@ with tab1:
     st.image('./images/equation_2.png')
     st.image('./images/equation_4.png')
     definition_caption = """
-                Result_V: Value of a measurand.
+                ResultV: Value of a measurand.
                 
-                Result_FM: First measured concentration of a measurand (Initial estimate of the value of a measurand)
+                ResultFM: First measured concentration of a measurand (Initial estimate of the value of a measurand)
                 
-                Result_SM: Measured concentration of a measurand via simulation.
+                ResultSM: Measured concentration of a measurand via simulation.
                 
                 u_rel(known): Relative standard MU (expressed in percentage units) of uploaded (original) data entered by user.
                 
@@ -181,7 +181,7 @@ with tab1:
                 
                 ##### **Calculation Process**
                 
-                The overall agreement between the Result_V and Result_SM categories and the sublevel agreement based on the clinical decision limits are calculated for each u_rel(simulated) rate along with sensitivity and specificity values.
+                The overall agreement between the ResultV and ResultSM categories and the sublevel agreement based on the clinical decision limits are calculated for each u_rel(simulated) rate along with sensitivity and specificity values.
                 Minimum, desirable, and optimal analytical performance specifications were determined according to the aggreement thresholds that entered previously.
                 
                 ##### **Contour Plots**
