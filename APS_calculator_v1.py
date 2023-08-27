@@ -197,7 +197,7 @@ with tab1:
                 Minimum, desirable, and optimal analytical performance specifications were determined according to the aggreement thresholds that entered previously.
                 
                 ##### **Contour Plots**
-                The web application produces a series of contour plots that visually represent agreement rates as percentages on the x-axis and their corresponding measurement uncertainty values on the y-axis. 
+                The web application produces a series of contour plots that visually represent agreement rates as percentages on the x-axis and their corresponding relative standard measurement uncertainty values on the y-axis. 
                 Horizontal lines are added to indicate the minimum, desirable, and optimal APSs for measurement uncertainty, corresponding to different agreement levels. 
 
                 """)
