@@ -166,11 +166,15 @@ with tab1:
     st.caption(definition_caption)
     st.markdown("""        
                 
-                ##### **The simulation process was performed in three steps as follows:**
-            
-                - Step 1- Categorization of original concentration of the analyte according to its clinical decision limits.
-                - Step 2- Measured (simulated) result generation
-                - Step 3- Recategorization of measured (simulated) concentration (as mentioned in step 1)
+                ##### **The simulation process comprises four steps as follows:**
+
+                -Step 1: Elimination the effect of urel (known) on the uploaded data (ResultFM) to obtain ResultV using Equation II.
+                -Step 2: Categorization of ResultV according to entered clinical decision limits.
+                -Step 3: Generating measured (simulated) results (ResultSM) by introducing urel (simulated) using Equation IV.
+                -Step 4: Recategorization of ResultSM based on the clinical decision limits set in Step 2.
+
+                Note: After their generation, ResultV and ResultSM are rounded up according to the number of decimals of the ResultFM entered by the user.
+
                 
                 The simulation is repeated for 331 different measurement uncertainty rates ranging from 0% to 33.1% with intervals of 0.1%. 
                 
