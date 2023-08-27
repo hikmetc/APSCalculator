@@ -168,10 +168,10 @@ with tab1:
                 
                 ##### **The simulation process comprises four steps as follows:**
 
-                -Step 1: Elimination the effect of urel (known) on the uploaded data (ResultFM) to obtain ResultV using Equation II.
-                -Step 2: Categorization of ResultV according to entered clinical decision limits.
-                -Step 3: Generating measured (simulated) results (ResultSM) by introducing urel (simulated) using Equation IV.
-                -Step 4: Recategorization of ResultSM based on the clinical decision limits set in Step 2.
+                - Step 1: Elimination the effect of urel (known) on the uploaded data (ResultFM) to obtain ResultV using Equation II.
+                - Step 2: Categorization of ResultV according to entered clinical decision limits.
+                - Step 3: Generating measured (simulated) results (ResultSM) by introducing urel (simulated) using Equation IV.
+                - Step 4: Recategorization of ResultSM based on the clinical decision limits set in Step 2.
 
                 Note: After their generation, ResultV and ResultSM are rounded up according to the number of decimals of the ResultFM entered by the user.
 
