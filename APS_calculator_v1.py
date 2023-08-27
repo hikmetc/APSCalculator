@@ -16,7 +16,7 @@ from sklearn.metrics import accuracy_score
 import plotly.graph_objects as go
 
 with st.sidebar:
-    with open('./template/template.xlsx', "rb") as template_file:
+    with open('./template/template_data_fasting_glucose.xlsx', "rb") as template_file:
         template_byte = template_file.read()
     # download template excel file
     st.download_button(label="Click to Download Template File",
