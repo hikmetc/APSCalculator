@@ -173,9 +173,9 @@ with tab1:
                 
                 ResultSM: Measured concentration of a measurand via simulation.
                 
-                u_rel(known): Relative standard MU (expressed in percentage units) of uploaded (original) data entered by user.
+                u_rel(known): Relative standard MU of uploaded (original) data entered by user.
                 
-                u_rel(simulated): Relative standard MU (expressed in percentage units) of simulated measurement.
+                u_rel(simulated): Relative standard MU of simulated measurement.
                 
                 n(0,1): A pseudo-random number generated with a Gaussian distribution having a mean of 0 and a standard deviation of 1.
                 """
