@@ -426,7 +426,7 @@ if analyze_button:
                 col1.info('Make sure you have entered the number of decimal places of the selected data correctly', icon = "ℹ️")
                 col2.write(" ")
                 col2.write(create_table(names))
-                col2.write(f"**urel_known = ** {urel_of_original_data*100}")
+                col2.markdown(f"**urel(known) = ** {urel_of_original_data*100}%")
                 
                 st.write(" ")
                 st.markdown('##### **:green[Histogram of the original data]**')
