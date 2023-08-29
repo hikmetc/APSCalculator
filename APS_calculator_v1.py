@@ -48,7 +48,7 @@ with st.sidebar:
 
     #-----------------------------------------------------------------------
     # Enter Relative Standard Measurement Uncertainty (urel) of The Selected Data
-    urel_of_original_data = st.number_input('**Enter Relative Standard Measurement Uncertainty (urel) of The Selected Data**', min_value=0.00000, max_value=33.00000, format="%.f")
+    urel_of_original_data = st.number_input('**Enter Relative Standard Measurement Uncertainty (urel (%)) of The Selected Data**', min_value=0.00000, max_value=33.00000, format="%.f")
     urel_of_original_data = float(urel_of_original_data/100)
     
     # enter number of decimal places of data
