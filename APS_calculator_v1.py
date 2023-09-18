@@ -46,11 +46,7 @@ with st.sidebar:
         # data of analyte selection
         analyte_data, analyte_name_box = process_file(uploaded_file)
 
-    #-----------------------------------------------------------------------
-    # Enter Relative Standard Measurement Uncertainty (urel) of The Selected Data
-    urel_of_original_data = st.number_input('**Enter Relative Standard Measurement Uncertainty (urel) of The Selected Data** (in percentage units)', min_value=0.00000, max_value=33.00000, format="%.f")
-    urel_of_original_data = float(urel_of_original_data/100)
-    
+    #-----------------------------------------------------------------------    
     # enter number of decimal places of data
     number_of_decimals = st.number_input('**Enter Number of Decimal Places of The Selected Data**', min_value=0, max_value=12)
 
@@ -138,14 +134,12 @@ with tab1:
 
                 2. Select the measurand name. 
                 (e.g., for template.xlsx file, "Fasting Glucose (mg/dL)")
-                3. Enter the relative standard measurement uncertainty (urel) of the selected data. 
-                (e.g., 1.5% u_rel(known))
-                4. Enter the number of decimal places of the selected data 
+                3. Enter the number of decimal places of the selected data 
                 (e.g., for 126, the number of decimal places is 0; for 10.95, the number of decimal places is 2). 
                 (e.g., for glucose example in the template.xlsx, the number of decimal places is "0")
-                5. Enter the number of clinical decision limits you want to include in the APS determination process 
+                4. Enter the number of clinical decision limits you want to include in the APS determination process 
                 (e.g., for glucose example in the template.xlsx file, there are two CDLs (100 mg/dL and 126 mg/dL))
-                6. Enter the value(s) of clinical decision limit(s) 
+                5. Enter the value(s) of clinical decision limit(s) 
                 (e.g., for glucose example in the template.xlsx file, CDLs are 100 mg/dL and 126 mg/dL) 
                 
                 **Note:** Please check the final category intervals on the "Distribution of data" page. 
@@ -156,12 +150,12 @@ with tab1:
                 
                 When one CDL is entered by user, the CDL is considered within the higher category (Categories would be <CDL, ≥CDL).
                 
-                7. Enter the agreement thresholds that will be used to determine minimum, desirable, and optimal analytical performance specifications.
-                8. Click on the "Simulate & Analyze" button.
+                6. Enter the agreement thresholds that will be used to determine minimum, desirable, and optimal analytical performance specifications.
+                7. Click on the "Simulate & Analyze" button.
                 
                 #### Simulation & Calculation Process
                 
-                APS Calculator firstly eliminates the effect of known MU (entered by the user) belonging to the uploaded (original) laboratory data, 
+                !!!APS Calculator firstly eliminates the effect of known MU (entered by the user) belonging to the uploaded (original) laboratory data, 
                 which is followed by simulation of “measured” values by introducing MU into the MU-eliminated data, using the following formula: 
                 """) 
     st.image('./images/equation_2.png')
@@ -173,8 +167,6 @@ with tab1:
                 
                 ResultSM: Measured concentration of a measurand via simulation.
                 
-                u_rel(known): Relative standard MU of uploaded (original) data entered by user.
-                
                 u_rel(simulated): Relative standard MU of simulated measurement.
                 
                 n(0,1): A pseudo-random number generated with a Gaussian distribution having a mean of 0 and a standard deviation of 1.
@@ -184,7 +176,7 @@ with tab1:
                 
                 ##### **The simulation process comprises four steps as follows:**
 
-                - Step 1: Elimination the effect of urel (known) on the uploaded data (ResultFM) to obtain ResultV using Equation II.
+                !!- Step 1: Elimination the effect of urel (known) on the uploaded data (ResultFM) to obtain ResultV using Equation II.
                 - Step 2: Categorization of ResultV according to entered clinical decision limits.
                 - Step 3: Generating measured (simulated) results (ResultSM) by introducing urel (simulated) using Equation IV.
                 - Step 4: Recategorization of ResultSM based on the clinical decision limits set in Step 2.
@@ -426,7 +418,6 @@ if analyze_button:
                 col1.info('Make sure you have entered the number of decimal places of the selected data correctly', icon = "ℹ️")
                 col2.write(" ")
                 col2.write(create_table(names))
-                col2.markdown(f"**urel(known)(%) =** { urel_of_original_data*100}%")
                 
                 st.write(" ")
                 st.markdown('##### **:green[Histogram of the original data]**')
@@ -565,22 +556,17 @@ if analyze_button:
                 
                 # simulation of 10 different random seed functions
                 for s in np.arange(1, 11, 1):          
-                    np.random.seed(s) # seed for reproducible results for simulated mu
+                    np.random.seed(s+1234) # seed for reproducible results for simulated mu
                     imprec_data_raw = np.random.normal(0, 1, n_data)
                     imprec_data_raw = pd.Series(imprec_data_raw)
-                    
-                    np.random.seed(s+1234) # seed for reproducible results for orginal data MU cleaning
-                    imprec_data_raw_2 = np.random.normal(0, 1, n_data)
-                    imprec_data_raw_2 = pd.Series(imprec_data_raw_2)
                                 
                     n_cat_n = []
                     o_cat_n = list(o_cat_n)
                     result_t1_cat_n = []
                        
                     urel_sim = e # simulated urel
-                    urel_known = urel_of_original_data # urel of original data was assigned as urel_known
-                    result_t1 = (od/(1 + imprec_data_raw_2 * urel_known))
-                    y_od = result_t1 * (1 + imprec_data_raw * urel_sim)  # urel_of_original_data (as a fraction) was used then urel_sim applied  
+                    result_t1 = od # original result
+                    y_od = result_t1 * (1 + imprec_data_raw * urel_sim)  # simulated result, urel_sim applied as fraction
                     
                     nd = round(y_od, number_of_decimals) # round generated values according to number of decimals of the selected data entered by user
                     nd_cat= pd.cut(nd, bins, labels=names) # Categorization of the new data
