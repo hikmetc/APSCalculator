@@ -157,8 +157,7 @@ with tab1:
                 
                 !!!APS Calculator simulates “measured” values by introducing MU into the uploaded (original) laboratory data, using the following formula: 
                 """) 
-    st.image('./images/equation_2.png')
-    st.image('./images/equation_4.png')
+    st.image('./images/formula_used.png')
     definition_caption = """
                 ResultO: Original concentration of the measurand, mostly a single estimate of the true value.
 
