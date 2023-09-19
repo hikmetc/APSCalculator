@@ -172,9 +172,9 @@ with tab1:
                 
                 ##### **The simulation process comprises four steps as follows:**
 
-                Step 1: Categorization of ResultO according to entered clinical decision limits.
-                Step 2: Generating measured (simulated) results by introducing urel to the original concentrations using the aforementioned formula.
-                Step 3: Recategorization of measured (simulated) concentration based on the clinical decision limits set in Step 1.
+                -Step 1: Categorization of ResultO according to entered clinical decision limits.
+                -Step 2: Generating measured (simulated) results by introducing urel to the original concentrations using the aforementioned formula.
+                -Step 3: Recategorization of measured (simulated) concentration based on the clinical decision limits set in Step 1.
                 
                 Note: After its generation ResultM is rounded up according to the number of decimals of the ResultO entered by the user.
 
