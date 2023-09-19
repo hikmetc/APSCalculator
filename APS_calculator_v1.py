@@ -160,15 +160,13 @@ with tab1:
     st.image('./images/equation_2.png')
     st.image('./images/equation_4.png')
     definition_caption = """
-                ResultV: Value of a measurand.
-                
-                ResultFM: First measured concentration of a measurand (Initial estimate of the value of a measurand)
-                
-                ResultSM: Measured concentration of a measurand via simulation.
-                
-                u_rel(simulated): Relative standard MU of simulated measurement.
-                
-                n(0,1): A pseudo-random number generated with a Gaussian distribution having a mean of 0 and a standard deviation of 1.
+                ResultO: Original concentration of the measurand, mostly a single estimate of the true value.
+
+                ResultM: Measured (simulated) concentration of the measurand. After its generation, ResultM is rounded up according to the number of decimals of the ResultO entered by the user.
+
+                n(0,1): A random number generated with a normal distribution having a mean of 0 and a standard deviation of 1. The seed function is employed to ensure that the random distribution is reproducible.
+
+                urel: Relative standard MU (in the formula, expressed as fractions)
                 """
     st.caption(definition_caption)
     st.markdown("""        
