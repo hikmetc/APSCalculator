@@ -155,8 +155,7 @@ with tab1:
                 
                 #### Simulation & Calculation Process
                 
-                !!!APS Calculator firstly eliminates the effect of known MU (entered by the user) belonging to the uploaded (original) laboratory data, 
-                which is followed by simulation of “measured” values by introducing MU into the MU-eliminated data, using the following formula: 
+                !!!APS Calculator simulates “measured” values by introducing MU into the uploaded (original) laboratory data, using the following formula: 
                 """) 
     st.image('./images/equation_2.png')
     st.image('./images/equation_4.png')
@@ -176,12 +175,12 @@ with tab1:
                 
                 ##### **The simulation process comprises four steps as follows:**
 
-                !!- Step 1: Elimination the effect of urel (known) on the uploaded data (ResultFM) to obtain ResultV using Equation II.
-                - Step 2: Categorization of ResultV according to entered clinical decision limits.
-                - Step 3: Generating measured (simulated) results (ResultSM) by introducing urel (simulated) using Equation IV.
-                - Step 4: Recategorization of ResultSM based on the clinical decision limits set in Step 2.
+                Step 1: Categorization of ResultO according to entered clinical decision limits.
+                Step 2: Generating measured (simulated) results by introducing urel to the original concentrations using the aforementioned formula.
+                Step 3: Recategorization of measured (simulated) concentration based on the clinical decision limits set in Step 1.
+                
+                Note: After its generation ResultM is rounded up according to the number of decimals of the ResultO entered by the user.
 
-                Note: After their generation, ResultV and ResultSM are rounded up according to the number of decimals of the ResultFM entered by the user.
 
                 
                 The simulation is repeated for 331 different measurement uncertainty rates ranging from 0% to 33.1% with intervals of 0.1%. 
