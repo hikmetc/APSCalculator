@@ -170,7 +170,7 @@ with tab1:
     st.caption(definition_caption)
     st.markdown("""        
                 
-                ##### **The simulation process comprises four steps as follows:**
+                ##### **The simulation process comprises three steps as follows:**
 
                 **Step 1**: Categorization of ResultO according to entered clinical decision limits.
                 
