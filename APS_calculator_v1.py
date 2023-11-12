@@ -202,9 +202,9 @@ with tab1:
 
                 """)
     st.markdown('---')
-    content=""" Disclaimer:
+    content=""" **Disclaimer:**
 
-    The APS Calculator is provided solely as a decision support tool for assisting users in 
+    *The APS Calculator is provided solely as a decision support tool for assisting users in 
     setting analytical performance specifications based on indirect outcome. 
     It is important to note that while the tool aims to provide valuable guidance, 
     the ultimate responsibility for setting appropriate analytical performance specifications lies with the user.
@@ -222,7 +222,7 @@ with tab1:
     including technical issues, maintenance, or unforeseen circumstances.The creators, developers, and maintainers 
     of the APS Calculator shall not be held liable for any direct or indirect damages or losses arising from its use
     or resulting from the APS calculator's temporary or permanent unavailability. It is advised to regularly 
-    review this disclaimer, as it may be updated to reflect any changes in regulations, best practices, or other relevant factors.
+    review this disclaimer, as it may be updated to reflect any changes in regulations, best practices, or other relevant factors.*
             """
     st.warning(content, icon="⚠️")
     st.markdown('---')
