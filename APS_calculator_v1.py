@@ -120,7 +120,7 @@ with tab1:
                 This web application is designed to help laboratory professinals to determine 
                 their analytical performance specifications for relative standard measurement uncertainty based on their intended clinical setting and population of concern.
                 """)
-    st.info("""**Please cite:** *Çubukçu, H.C., Vanstapel, F., Thelen M., van Schrojenstein Lantman, M., 
+    st.info("""**Please cite the following reference when using APS Calculator in your work:** *Çubukçu, H.C., Vanstapel, F., Thelen M., van Schrojenstein Lantman, M., 
     Bernabeu-Andreu, F. A., Mesko Brguljan P., Milinkovic, N., Linko, S., Panteghini, M., Boursier, G. 
     (2023) APS Calculator: A Data-Driven Tool for Setting Outcome-Based Analytical Performance Specifications 
     for Measurement Uncertainty Using Specific Clinical Requirements and Population Data. Clinical Chemistry 
