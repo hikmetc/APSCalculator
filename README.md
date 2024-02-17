@@ -6,4 +6,4 @@ Web application link: https://hikmetc-apscalculator.streamlit.app/
 
 If simulation process exceed 30 minutes the web application may stop and start again. For long lasting simulations prefer desktop app. Due to the inherent characteristics of stlite platform, users can not see spinners (e.g. please wait, simulation continues). Please wait until the simulation results appear.
 
-**Desktop application for windows:** [APS_Calculator_v_0.1.0.exe](https://drive.google.com/file/d/1Crs9Zkf6GmETL_Pdr_gsZkq71Xl2M3YT/view?usp=share_link)
+**Desktop application for windows:** [APS_Calculator_v_0.1.0.exe](https://drive.google.com/file/d/1-SjlhLRAFANJns6OXDWVaXjEhUDNkbDd/view?usp=sharing)
