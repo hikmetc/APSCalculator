@@ -120,8 +120,9 @@ with tab1:
                 This web application is designed to help laboratory professinals to determine 
                 their analytical performance specifications for relative standard measurement uncertainty based on their intended clinical setting and population of concern.
                 
-                If you would like to use on your own PC as a desktop application download the exe file below:
-                **Desktop application download lint for windows:** [APS_Calculator_v_0.1.0.exe](https://drive.google.com/file/d/1-SjlhLRAFANJns6OXDWVaXjEhUDNkbDd/view?usp=sharing)
+                If you wish to utilize the application as a desktop program on your PC, please proceed by downloading the executable file provided below:
+                
+                **Desktop application download link for Windows:** [APS_Calculator_v_0.1.0.exe](https://drive.google.com/file/d/1-SjlhLRAFANJns6OXDWVaXjEhUDNkbDd/view?usp=sharing)
                 """)
     st.markdown("""            
                 #### Instructions
