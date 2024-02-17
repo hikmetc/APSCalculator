@@ -120,11 +120,9 @@ with tab1:
                 This web application is designed to help laboratory professinals to determine 
                 their analytical performance specifications for relative standard measurement uncertainty based on their intended clinical setting and population of concern.
 
-                If the simulation process exceeds 30 minutes, the web application may encounter interruptions and restart. 
+                **If the simulation process exceeds 30 minutes, the web application may encounter interruptions and restart. 
                 For more enduring simulations, it is advisable to opt for the desktop application. 
-                To do so, kindly download the executable file provided below:
-                
-                **Desktop application download link for Windows:** [APS_Calculator_v_0.1.0.exe](https://drive.google.com/file/d/1-SjlhLRAFANJns6OXDWVaXjEhUDNkbDd/view?usp=sharing)
+                To do so, kindly download the executable file provided below:**
                 """)
     st.info('**Desktop application download link for Windows:** [APS_Calculator_v_0.1.0.exe](https://drive.google.com/file/d/1-SjlhLRAFANJns6OXDWVaXjEhUDNkbDd/view?usp=sharing)')
     st.markdown("""            
