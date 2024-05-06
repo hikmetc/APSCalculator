@@ -1,7 +1,7 @@
 # Developed by Hikmet Can Çubukçu
 
 import streamlit as st
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide", page_title="APS Calculator", page_icon="🚦")
 import statistics
 import pandas as pd
 import numpy as np
