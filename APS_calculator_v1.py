@@ -24,27 +24,33 @@ with st.sidebar:
                         file_name="template.xlsx",
                         mime='application/octet-stream')
     
-    # DATA UPLOAD AND COLUMN SELECTION
+    # Upload file widget
+    uploaded_file = st.file_uploader(
+        '#### **Upload your .xlsx (Excel) or .csv file:**',
+        type=['csv', 'xlsx'],
+        accept_multiple_files=False
+    )
+
+    # Define a cached function to process file data
     @st.cache_data
-    def process_file(file):
-        # data of analyte selection
+    def load_data(file):
+        # Load the uploaded file (Excel or CSV)
         try:
-            uploaded_file = pd.read_excel(file)
+            df = pd.read_excel(file)
         except:
-            uploaded_file = pd.read_csv(file, sep=None, engine='python')
-        analyte_name_box = st.selectbox("**Select the Measurand Name**", tuple(uploaded_file.columns))
-        analyte_data = uploaded_file[analyte_name_box]
-        analyte_data = analyte_data.dropna(axis=0).reset_index()
-        analyte_data = analyte_data[analyte_name_box]
-        return analyte_data, analyte_name_box
+            df = pd.read_csv(file, sep=None, engine='python')
+        return df
 
-    # upload file
-    uploaded_file = st.file_uploader('#### **Upload your .xlsx (Excel) or .csv file:**', type=['csv','xlsx'], accept_multiple_files=False)
-
-    # column name (data) selection
+    # Check if a file has been uploaded
     if uploaded_file is not None:
-        # data of analyte selection
-        analyte_data, analyte_name_box = process_file(uploaded_file)
+        # Load the data using the cached function
+        uploaded_data = load_data(uploaded_file)
+
+        # Display the selectbox widget outside the cached function
+        analyte_name_box = st.selectbox("**Select the Measurand Name**", tuple(uploaded_data.columns))
+
+        # Process the selected analyte data
+        analyte_data = uploaded_data[analyte_name_box].dropna().reset_index(drop=True)
 
     #-----------------------------------------------------------------------    
     # enter number of decimal places of data
