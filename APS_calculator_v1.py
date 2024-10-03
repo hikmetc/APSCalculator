@@ -25,7 +25,7 @@ with st.sidebar:
                         mime='application/octet-stream')
     
     # DATA UPLOAD AND COLUMN SELECTION
-    
+    @st.cache_data
     def process_file(file):
         # data of analyte selection
         try:
