@@ -16,6 +16,7 @@ from sklearn.metrics import accuracy_score
 import plotly.graph_objects as go
 
 with st.sidebar:
+    st.image('./images/eflm_logo.png')
     with open('./template/template_data_fasting_glucose.xlsx', "rb") as template_file:
         template_byte = template_file.read()
     # download template excel file
@@ -113,7 +114,6 @@ with st.sidebar:
     
     #st.markdown('---')
     st.info('*Developed by Hikmet Can Çubukçu, MD, EuSpLM* <hikmetcancubukcu@gmail.com>')
-    st.image('./images/eflm_logo.png')
     
  
 st.image('./images/APS_Calculator_v2.png')
