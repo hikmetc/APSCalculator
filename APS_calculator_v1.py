@@ -113,6 +113,7 @@ with st.sidebar:
     
     #st.markdown('---')
     st.info('*Developed by Hikmet Can Çubukçu, MD, EuSpLM* <hikmetcancubukcu@gmail.com>')
+    st.image('./images/eflm_logo.png')
     
  
 st.image('./images/APS_Calculator_v2.png')
