@@ -207,11 +207,10 @@ with tab1:
                 Horizontal lines are added to indicate the minimum, desirable, and optimal APSs for measurement uncertainty, corresponding to different agreement levels. 
 
                 """)
-    st.info("""**Please cite:** *Çubukçu, H.C., Vanstapel, F., Thelen M., van Schrojenstein Lantman, M., 
-    Bernabeu-Andreu, F. A., Mesko Brguljan P., Milinkovic, N., Linko, S., Panteghini, M., Boursier, G. 
-    (2023) APS Calculator: A Data-Driven Tool for Setting Outcome-Based Analytical Performance Specifications 
-    for Measurement Uncertainty Using Specific Clinical Requirements and Population Data. Clinical Chemistry 
-    and Laboratory Medicine (CCLM), (Ahead of a print) doi:10.1515/cclm-2023-0740*""")
+    st.info("""**Please cite:** *Çubukçu HC, Vanstapel F, Thelen M, van Schrojenstein Lantman M, Bernabeu-Andreu FA, Meško Brguljan P, 
+    Milinkovic N, Linko S, Panteghini M, Boursier G. APS calculator: a data-driven tool for setting outcome-based analytical performance 
+    specifications for measurement uncertainty using specific clinical requirements and population data. 
+    Clin Chem Lab Med. 2023 Nov 17;62(4):597-607. doi: 10.1515/cclm-2023-0740.*""")
     
     st.markdown('---')
     content=""" **Disclaimer:**
