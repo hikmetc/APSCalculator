@@ -113,7 +113,7 @@ with st.sidebar:
     analyze_button = st.button('**:green[Simulate & Calculate]**')
     
     #st.markdown('---')
-    st.info('*Developed by Hikmet Can Çubukçu, MD, EuSpLM* <hikmetcancubukcu@gmail.com>')
+    st.info('*Developed by Hikmet Can Çubukçu, MD, EuSpLM, EFLM Committee: Accreditation and ISO/CEN standards * <hikmetcancubukcu@gmail.com>')
     
  
 st.image('./images/APS_Calculator_v2.png')
@@ -124,7 +124,7 @@ tab1, tab2, tab3, tab4 = st.tabs(["📖 **Instructions**", "📊 **:green[Distri
                                 "🚦 **:blue[APS based on overall agreement]**", "🚥 **:violet[APS based on sublevel aggreement]**"],)
 with tab1:
     st.markdown("""
-                This web application is designed to help laboratory professinals to determine 
+                This web application is designed to help laboratory professionals to determine 
                 their analytical performance specifications for relative standard measurement uncertainty based on their intended clinical setting and population of concern.
 
                 **If the simulation process exceeds 30 minutes, the web application may encounter interruptions and restart. 
