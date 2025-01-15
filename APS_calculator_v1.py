@@ -113,7 +113,7 @@ with st.sidebar:
     analyze_button = st.button('**:green[Simulate & Calculate]**')
     
     #st.markdown('---')
-    st.info('*Developed by Hikmet Can Çubukçu, MD, EuSpLM, EFLM Committee: Accreditation and ISO/CEN standards * <hikmetcancubukcu@gmail.com>')
+    st.info('*Developed by Hikmet Can Çubukçu, MD, EuSpLM, EFLM Committee: Accreditation and ISO/CEN standards* <hikmetcancubukcu@gmail.com>')
     
  
 st.image('./images/APS_Calculator_v2.png')
