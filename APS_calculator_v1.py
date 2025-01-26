@@ -132,6 +132,10 @@ with tab1:
                 To do so, kindly download the executable file provided below:**
                 """)
     st.info('**Desktop application download link for Windows:** [APS_Calculator_v_0.1.0.exe](https://drive.google.com/file/d/1-SjlhLRAFANJns6OXDWVaXjEhUDNkbDd/view?usp=sharing)')
+    
+    VIDEO_URL = "https://youtu.be/H8yOYKW-j7o"
+    st.video(VIDEO_URL)
+
     st.markdown("""            
                 #### Instructions
                 
