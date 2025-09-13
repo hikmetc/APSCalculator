@@ -103,11 +103,11 @@ with st.sidebar:
     st.subheader('Enter aggreement thresholds below')
     c1, c2, c3 = st.columns(3)
     with c1:
-        min_agg_threshold = st.number_input('Minimum', value = 90)
+        min_agg_threshold = st.number_input('Minimum', value = 90.0, step=0.01, format="%.2f")
     with c2:
-        des_agg_threshold = st.number_input('Desirable', value = 95)
+        des_agg_threshold = st.number_input('Desirable', value = 95.0, step=0.01, format="%.2f")
     with c3:
-        opt_agg_threshold = st.number_input('Optimal', value = 99) 
+        opt_agg_threshold = st.number_input('Optimal', value = 99.0, step=0.01, format="%.2f") 
         
     # Action button "Simulate & Calculate"
     analyze_button = st.button('**:green[Simulate & Calculate]**')
