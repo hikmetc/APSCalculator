@@ -32,20 +32,32 @@ with st.sidebar:
         accept_multiple_files=False
     )
 
-    # Define a cached function to process file data
-    @st.cache_data
+    # Load the uploaded file (Excel or CSV)
     def load_data(file):
-        # Load the uploaded file (Excel or CSV)
         try:
             df = pd.read_excel(file)
-        except:
+        except Exception:
+            if hasattr(file, "seek"):
+                file.seek(0)
             df = pd.read_csv(file, sep=None, engine='python')
+            # Single-column CSV: the delimiter sniffer can split the header text
+            # (e.g. "Glucose" -> "Gl", "cose"); re-read with the default comma.
+            if df.shape[1] > 1 and df.iloc[:, 1:].isna().all().all():
+                if hasattr(file, "seek"):
+                    file.seek(0)
+                df = pd.read_csv(file)
         return df
 
     # Check if a file has been uploaded
     if uploaded_file is not None:
-        # Load the data using the cached function
-        uploaded_data = load_data(uploaded_file)
+        # The file is read once per upload and kept only in this user's session
+        # (st.session_state): it is not re-read on every rerun, is not shared with
+        # other sessions, and is discarded when the page is refreshed or closed.
+        file_key = getattr(uploaded_file, "file_id", None) or str(uploaded_file)
+        if st.session_state.get("uploaded_file_key") != file_key:
+            st.session_state["uploaded_data"] = load_data(uploaded_file)
+            st.session_state["uploaded_file_key"] = file_key
+        uploaded_data = st.session_state["uploaded_data"]
 
         # Display the selectbox widget outside the cached function
         analyte_name_box = st.selectbox("**Select the Measurand Name**", tuple(uploaded_data.columns))
