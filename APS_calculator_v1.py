@@ -27,7 +27,7 @@ with st.sidebar:
     
     # Upload file widget
     uploaded_file = st.file_uploader(
-        '####**Upload your .xlsx (Excel) or .csv file:**',
+        '**Upload your .xlsx (Excel) or .csv file:**',
         type=['csv', 'xlsx'],
         accept_multiple_files=False
     )
